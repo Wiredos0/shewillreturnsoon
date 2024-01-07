@@ -1,4 +1,4 @@
-const { getPrefix } = global.utils;
+const{ getPrefix } = global.utils;
 
 module.exports = {
 	config: {

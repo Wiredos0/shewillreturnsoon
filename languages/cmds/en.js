@@ -63,6 +63,12 @@ module.exports = {
 			error: "An error occurred, please try again later"
 		}
 	},
+  animefy: {
+    shortDescription: "convert pic into anime style",
+    longDescription: "convert pic into anime style",
+    category: "anime",
+    guide: "{pn} anime {on img reply}"
+  },
 	antichangeinfobox: {
 		shortDescription: "Anti change info box",
 		longDescription: "Turn on/off anti change info box",
