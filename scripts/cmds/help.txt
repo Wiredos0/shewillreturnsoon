@@ -60,21 +60,95 @@ module.exports = {
       pageNotFound: "Trang %1 không tồn tại"
     },
     en: {
-      help: "╭─────────────⭓\n%1\n├─────⭔\n│ Page [ %2/%3 ]\n│ Currently, the bot has %4 commands that can be used\n│ » Type %5help <page> to view the command list\n│ » Type %5help to view the details of how to use that command\n├────────⭔\n│ %6\n╰─────────────⭓",
-      help2: "%1├───────⭔\n│ » Currently, the bot has %2 commands that can be used\n│ » Type %3help <command name> to view the details of how to use that command\n│ %4\n╰─────────────⭓",
-      commandNotFound: "Command \"%1\" does not exist",
-      getInfoCommand: "╭── NAME ────⭓\n│ %1\n├── INFO\n│ Description: %2\n│ Other names: %3\n│ Other names in your group: %4\n│ Version: %5\n│ Role: %6\n│ Time per command: %7s\n│ Author: %8\n├── Usage\n%9\n├── Notes\n│ The content inside <XXXXX> can be changed\n│ The content inside [a|b|c] is a or b or c\n╰──────⭔",
-      onlyInfo: "╭── INFO ────⭓\n│ Command name: %1\n│ Description: %2\n│ Other names: %3\n│ Other names in your group: %4\n│ Version: %5\n│ Role: %6\n│ Time per command: %7s\n│ Author: %8\n╰─────────────⭓",
-      onlyUsage: "╭── USAGE ────⭓\n│%1\n╰─────────────⭓",
-      onlyAlias: "╭── ALIAS ────⭓\n│ Other names: %1\n│ Other names in your group: %2\n╰─────────────⭓",
-      onlyRole: "╭── ROLE ────⭓\n│%1\n╰─────────────⭓",
-      doNotHave: "Do not have",
-      roleText0: "0 (All users)",
-      roleText1: "1 (Group administrators)",
-      roleText2: "2 (Admin bot)",
-      roleText0setRole: "0 (set role, all users)",
-      roleText1setRole: "1 (set role, group administrators)",
-      pageNotFound: "Page %1 does not exist"
+            help: `
+                𐍈𐍈𐍈⌜**Help Command**⌟𐍈𐍈𐍈⧕
+                ╭─────────────⭓
+                %1
+                ├─────⭔
+                │ Page [ %2/%3 ]
+                │ Currently, the bot has %4 commands that can be used
+                │ » Type \`%5help <page>\` to view the command list
+                │ » Type \`%5help\` to view the details of how to use that command
+                ├────────⭔
+                │ %6
+                ╰─────────────⭓`.replace(/\n/g, '\n\n'),
+
+            help2: `
+                %1├───────⭔
+                │ » Currently, the bot has %2 commands that can be used
+                │ » Type %3help <command name> to view the details of how to use that command
+                │ %4
+                ╰─────────────⭓`.replace(/\n/g, '\n\n'),
+
+            commandNotFound: `
+                𐍈𐍈𐍈⌜**Command Not Found**⌟𐍈𐍈𐍈⧕
+                Command "%1" does not exist`.replace(/\n/g, '\n\n'),
+
+            getInfoCommand: `
+                𐍈𐍈𐍈⌜**Command Information**⌟𐍈𐍈𐍈⧕
+                ╭── NAME ────⭓
+                │ %1
+                ├── INFO
+                │ Description: %2
+                │ Other names: %3
+                │ Other names in your group: %4
+                │ Version: %5
+                │ Role: %6
+                │ Time per command: %7s
+                │ Author: %8
+                ├── USAGE
+                │%9
+                ├── NOTES
+                │ The content inside \`<XXXXX>\` can be changed
+                │ The content inside \`[a|b|c]\` is a or b or c
+                ╰──────⭔`.replace(/\n/g, '\n\n'),
+
+            onlyInfo: `
+                𐍈𐍈𐍈⌜**Info Only**⌟𐍈𐍈𐍈⧕
+                ╭── INFO ────⭓
+                │ Command name: %1
+                │ Description: %2
+                │ Other names: %3
+                │ Other names in your group: %4
+                │ Version: %5
+                │ Role: %6
+                │ Time per command: %7s
+                │ Author: %8
+                ╰─────────────⭓`.replace(/\n/g, '\n\n'),
+
+            onlyUsage: `
+                𐍈𐍈𐍈⌜**Usage Only**⌟𐍈𐍈𐍈⧕
+                ╭── USAGE ────⭓
+                │%1
+                ╰─────────────⭓`.replace(/\n/g, '\n\n'),
+
+            onlyAlias: `
+                𐍈𐍈𐍈⌜**Alias Only**⌟𐍈𐍈𐍈⧕
+                ╭── ALIAS ────⭓
+                │ Other names: %1
+                │ Other names in your group: %2
+                ╰─────────────⭓`.replace(/\n/g, '\n\n'),
+
+            onlyRole: `
+                𐍈𐍈𐍈⌜**Role Only**⌟𐍈𐍈𐍈⧕
+                ╭── ROLE ────⭓
+                │%1
+                ╰─────────────⭓`.replace(/\n/g, '\n\n'),
+
+            doNotHave: `
+                𐍈𐍈𐍈⌜**Do Not Have**⌟𐍈𐍈𐍈⧕
+                Do not have`.replace(/\n/g, '\n\n'),
+
+            roleText0: "0 (All users)",
+            roleText1: "1 (Group administrators)",
+            roleText2: "2 (Admin bot)",
+            roleText0setRole: "0 (set role, all users)",
+            roleText1setRole: "1 (set role, group administrators)",
+
+            pageNotFound: `
+                𐍈𐍈𐍈⌜**Page Not Found**⌟𐍈𐍈𐍈⧕
+                Page %1 does not exist`.replace(/\n/g, '\n\n')
+        },
     }
   },
 
