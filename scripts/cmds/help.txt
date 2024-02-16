@@ -11,133 +11,102 @@ const doNotDelete = "Fa Hi Ma";
 */
 
 module.exports = {
-  config: {
-    name: "help",
-    version: "1.17",
-    author: "NTKhang",
-    countDown: 5,
-    role: 0,
-    shortDescription: {
-      vi: "Xem cách dùng lệnh",
-      en: "View command usage"
+    config: {
+        name: "help",
+        version: "1.18",
+        author: "NTKhang",
+        countDown: 5,
+        role: 0,
+        shortDescription: {
+            vi: "Xem cách dùng lệnh",
+            en: "View command usage"
+        },
+        longDescription: {
+            vi: "Xem cách sử dụng của các lệnh",
+            en: "View command usage"
+        },
+        category: "info",
+        guide: {
+            vi: `   {pn} [để trống | <số trang> | <tên lệnh>]"
+                + "\n   {pn} <command name> [-u | usage | -g | guide]: chỉ hiển thị phần hướng dẫn sử dụng lệnh"
+                + "\n   {pn} <command name> [-i | info]: chỉ hiển thị phần thông tin về lệnh"
+                + "\n   {pn} <command name> [-r | role]: chỉ hiển thị phần quyền hạn của lệnh"
+                + "\n   {pn} <command name> [-a | alias]: chỉ hiển thị phần tên viết tắt của lệnh`,
+            en: `{pn} [empty | <page number> | <command name>]"
+                + "\n   {pn} <command name> [-u | usage | -g | guide]: only show command usage"
+                + "\n   {pn} <command name> [-i | info]: only show command info"
+                + "\n   {pn} <command name> [-r | role]: only show command role"
+                + "\n   {pn} <command name> [-a | alias]: only show command alias`,
+        },
+        priority: 1
     },
-    longDescription: {
-      vi: "Xem cách sử dụng của các lệnh",
-      en: "View command usage"
-    },
-    category: "info",
-    guide: {
-      vi: "   {pn} [để trống | <số trang> | <tên lệnh>]"
-        + "\n   {pn} <command name> [-u | usage | -g | guide]: chỉ hiển thị phần hướng dẫn sử dụng lệnh"
-        + "\n   {pn} <command name> [-i | info]: chỉ hiển thị phần thông tin về lệnh"
-        + "\n   {pn} <command name> [-r | role]: chỉ hiển thị phần quyền hạn của lệnh"
-        + "\n   {pn} <command name> [-a | alias]: chỉ hiển thị phần tên viết tắt của lệnh",
-      en: "{pn} [empty | <page number> | <command name>]"
-        + "\n   {pn} <command name> [-u | usage | -g | guide]: only show command usage"
-        + "\n   {pn} <command name> [-i | info]: only show command info"
-        + "\n   {pn} <command name> [-r | role]: only show command role"
-        + "\n   {pn} <command name> [-a | alias]: only show command alias"
-    },
-    priority: 1
-  },
 
-  langs: {
-    vi: {
-      help: "╭─────────────⭓\n%1\n├─────⭔\n│ Trang [ %2/%3 ]\n│ Hiện tại bot có %4 lệnh có thể sử dụng\n│ » Gõ %5help <số trang> để xem danh sách các lệnh\n│ » Gõ %5help để xem chi tiết cách sử dụng lệnh đó\n├────────⭔\n│ %6\n╰─────────────⭓",
-      help2: "%1├───────⭔\n│ » Hiện tại bot có %2 lệnh có thể sử dụng\n│ » Gõ %3help <tên lệnh> để xem chi tiết cách sử dụng lệnh đó\n│ %4\n╰─────────────⭓",
-      commandNotFound: "Lệnh \"%1\" không tồn tại",
-      getInfoCommand: "╭── NAME ────⭓\n│ %1\n├── INFO\n│ Mô tả: %2\n│ Các tên gọi khác: %3\n│ Các tên gọi khác trong nhóm bạn: %4\n│ Version: %5\n│ Role: %6\n│ Thời gian mỗi lần dùng lệnh: %7s\n│ Author: %8\n├── Usage\n│%9\n├── Notes\n│ Nội dung bên trong <XXXXX> là có thể thay đổi\n│ Nội dung bên trong [a|b|c] là a hoặc b hoặc c\n╰──────⭔",
-      onlyInfo: "╭── INFO ────⭓\n│ Tên lệnh: %1\n│ Mô tả: %2\n│ Các tên gọi khác: %3\n│ Các tên gọi khác trong nhóm bạn: %4\n│ Version: %5\n│ Role: %6\n│ Thời gian mỗi lần dùng lệnh: %7s\n│ Author: %8\n╰─────────────⭓",
-      onlyUsage: "╭── USAGE ────⭓\n│%1\n╰─────────────⭓",
-      onlyAlias: "╭── ALIAS ────⭓\n│ Các tên gọi khác: %1\n│ Các tên gọi khác trong nhóm bạn: %2\n╰─────────────⭓",
-      onlyRole: "╭── ROLE ────⭓\n│%1\n╰─────────────⭓",
-      doNotHave: "Không có",
-      roleText0: "0 (Tất cả người dùng)",
-      roleText1: "1 (Quản trị viên nhóm)",
-      roleText2: "2 (Admin bot)",
-      roleText0setRole: "0 (set role, tất cả người dùng)",
-      roleText1setRole: "1 (set role, quản trị viên nhóm)",
-      pageNotFound: "Trang %1 không tồn tại"
-    },
-    en: {
-            help: `
-                𐍈𐍈𐍈⌜**Help Command**⌟𐍈𐍈𐍈⧕
-                ╭─────────────⭓
-                %1
-                ├─────⭔
-                │ Page [ %2/%3 ]
-                │ Currently, the bot has %4 commands that can be used
-                │ » Type \`%5help <page>\` to view the command list
-                │ » Type \`%5help\` to view the details of how to use that command
-                ├────────⭔
-                │ %6
-                ╰─────────────⭓`.replace(/\n/g, '\n\n'),
+    langs: {
+        en: {
+            help: `𐍈𐍈𐍈⌜**Help Command**⌟𐍈𐍈𐍈⧕
+╭─────────────⭓
+%1
+├─────⭔
+│ Page [ %2/%3 ]
+│ Currently, the bot has %4 commands that can be used
+│ » Type %5help <page> to view the command list
+│ » Type %5help to view the details of how to use that command
+├────────⭔
+│ %6
+╰─────────────⭓`,
 
-            help2: `
-                %1├───────⭔
-                │ » Currently, the bot has %2 commands that can be used
-                │ » Type %3help <command name> to view the details of how to use that command
-                │ %4
-                ╰─────────────⭓`.replace(/\n/g, '\n\n'),
+            help2: `%1├───────⭔
+│ » Currently, the bot has %2 commands that can be used
+│ » Type %3help <command name> to view the details of how to use that command
+│ %4
+╰─────────────⭓`,
 
-            commandNotFound: `
-                𐍈𐍈𐍈⌜**Command Not Found**⌟𐍈𐍈𐍈⧕
-                Command "%1" does not exist`.replace(/\n/g, '\n\n'),
+            commandNotFound: `𐍈𐍈𐍈⌜**Command Not Found**⌟𐍈𐍈𐍈⧕
+Command "%1" does not exist`,
 
-            getInfoCommand: `
-                𐍈𐍈𐍈⌜**Command Information**⌟𐍈𐍈𐍈⧕
-                ╭── NAME ────⭓
-                │ %1
-                ├── INFO
-                │ Description: %2
-                │ Other names: %3
-                │ Other names in your group: %4
-                │ Version: %5
-                │ Role: %6
-                │ Time per command: %7s
-                │ Author: %8
-                ├── USAGE
-                │%9
-                ├── NOTES
-                │ The content inside \`<XXXXX>\` can be changed
-                │ The content inside \`[a|b|c]\` is a or b or c
-                ╰──────⭔`.replace(/\n/g, '\n\n'),
+            getInfoCommand: `╭── NAME ────⭓
+│ %1
+├── INFO
+│ Description: %2
+│ Other names: %3
+│ Other names in your group: %4
+│ Version: %5
+│ Role: %6
+│ Time per command: %7s
+│ Author: %8
+├── USAGE
+│%9
+├── NOTES
+│ The content inside <XXXXX> can be changed
+│ The content inside [a|b|c] is a or b or c
+╰──────⭔`,
 
-            onlyInfo: `
-                𐍈𐍈𐍈⌜**Info Only**⌟𐍈𐍈𐍈⧕
-                ╭── INFO ────⭓
-                │ Command name: %1
-                │ Description: %2
-                │ Other names: %3
-                │ Other names in your group: %4
-                │ Version: %5
-                │ Role: %6
-                │ Time per command: %7s
-                │ Author: %8
-                ╰─────────────⭓`.replace(/\n/g, '\n\n'),
+            onlyInfo: `╭── INFO ────⭓
+│ Command name: %1
+│ Description: %2
+│ Other names: %3
+│ Other names in your group: %4
+│ Version: %5
+│ Role: %6
+│ Time per command: %7s
+│ Author: %8
+╰─────────────⭓`,
 
-            onlyUsage: `
-                𐍈𐍈𐍈⌜**Usage Only**⌟𐍈𐍈𐍈⧕
-                ╭── USAGE ────⭓
-                │%1
-                ╰─────────────⭓`.replace(/\n/g, '\n\n'),
+            onlyUsage: `╭── USAGE ────⭓
+│%1
+╰─────────────⭓`,
 
-            onlyAlias: `
-                𐍈𐍈𐍈⌜**Alias Only**⌟𐍈𐍈𐍈⧕
-                ╭── ALIAS ────⭓
-                │ Other names: %1
-                │ Other names in your group: %2
-                ╰─────────────⭓`.replace(/\n/g, '\n\n'),
+            onlyAlias: `╭── ALIAS ────⭓
+│ Other names: %1
+│ Other names in your group: %2
+╰─────────────⭓`,
 
-            onlyRole: `
-                𐍈𐍈𐍈⌜**Role Only**⌟𐍈𐍈𐍈⧕
-                ╭── ROLE ────⭓
-                │%1
-                ╰─────────────⭓`.replace(/\n/g, '\n\n'),
+            onlyRole: `╭── ROLE ────⭓
+│%1
+╰─────────────⭓`,
 
-            doNotHave: `
-                𐍈𐍈𐍈⌜**Do Not Have**⌟𐍈𐍈𐍈⧕
-                Do not have`.replace(/\n/g, '\n\n'),
+            doNotHave: `𐍈𐍈𐍈⌜**Do Not Have**⌟𐍈𐍈𐍈⧕
+Do not have`,
 
             roleText0: "0 (All users)",
             roleText1: "1 (Group administrators)",
@@ -145,12 +114,12 @@ module.exports = {
             roleText0setRole: "0 (set role, all users)",
             roleText1setRole: "1 (set role, group administrators)",
 
-            pageNotFound: `
-                𐍈𐍈𐍈⌜**Page Not Found**⌟𐍈𐍈𐍈⧕
-                Page %1 does not exist`.replace(/\n/g, '\n\n')
+            pageNotFound: `𐍈𐍈𐍈⌜**Page Not Found**⌟𐍈𐍈𐍈⧕
+Page %1 does not exist`
         },
     }
-  },
+};
+
 
   onStart: async function ({ message, args, event, threadsData, getLang, role }) {
     const langCode = await threadsData.get(event.threadID, "data.lang") || global.GoatBot.config.language;
