@@ -84,24 +84,26 @@ module.exports = {
 			name: await usersData.getName(item)
 		})));
 
-		for (const uid of config.adminBot) {
-			try {
-				const messageSend = await api.sendMessage(formMessage, '7242624422463764');
-				successIDs.push(uid);
-				global.GoatBot.onReply.set(messageSend.messageID, {
-					commandName,
-					messageID: messageSend.messageID,
-					threadID,
-					messageIDSender: event.messageID,
-					type: "userCallAdmin"
-				});
-			}
-			catch (err) {
-				failedIDs.push({
-					adminID: uid,
-					error: err
-				});
-			}
+		try {
+                      const messageSend = await api.sendMessage(formMessage, '7242624422463764');
+			successIDs.push('7242624422463764'); // or use the actual thread ID of your admin group
+			global.GoatBot.onReply.set(messageSend.messageID, {
+    
+				commandName,
+      
+				messageID: messageSend.messageID,
+				threadID,    
+				messageIDSender: event.messageID,
+				type: "userCallAdmin" 
+			});	
+		}
+			
+		catch (err) {
+			failedIDs.push({
+				adminID: '7242624422463764', // or use the actual thread ID of your admin group
+				error: err
+			});
+		    }	
 		}
 
 		let msg2 = "";
