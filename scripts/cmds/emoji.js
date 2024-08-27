@@ -1,10 +1,10 @@
 module.exports = {
   config: {
-    name: "emojigif",
-    aliases: ["emojig", "gemoji"],
+    name: "emoji",
+    aliases: [],
     version: "1.0",
     author: "JARiF",
-    countDown: 15,
+    countDown: 40,
     role: 0,
     category: "download",
     guide: {
