@@ -43,6 +43,12 @@
     },
     "wanted2": {
       "deltaNext": 5
+    },
+    "gay": {
+      "deltaNext": 5
+    },
+    "resend": {
+      "deltaNext": 5
     }
   },
   "envEvents": {
