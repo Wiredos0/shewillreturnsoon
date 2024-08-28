@@ -4,15 +4,11 @@ const mediaTypes = ["photo", 'png', "animated_image", "video", "audio"];
 module.exports = {
 	config: {
 		name: "callad",
-		version: "1.6",
+		version: "1.7",
 		author: "NTKhang",
 		countDown: 5,
 		role: 0,
-		shortDescription: {
-			vi: "gửi tin nhắn về admin bot",
-			en: "send message to admin bot"
-		},
-		longDescription: {
+		description: {
 			vi: "gửi báo cáo, góp ý, báo lỗi,... của bạn về admin bot",
 			en: "send report, feedback, bug,... to admin bot"
 		},
@@ -84,26 +80,24 @@ module.exports = {
 			name: await usersData.getName(item)
 		})));
 
-		try {
-                      const messageSend = await api.sendMessage(formMessage, '7242624422463764');
-			successIDs.push('7242624422463764'); // or use the actual thread ID of your admin group
-			global.GoatBot.onReply.set(messageSend.messageID, {
-    
-				commandName,
-      
-				messageID: messageSend.messageID,
-				threadID,    
-				messageIDSender: event.messageID,
-				type: "userCallAdmin" 
-			});	
-		}
-			
-		catch (err) {
-			failedIDs.push({
-				adminID: '7242624422463764', // or use the actual thread ID of your admin group
-				error: err
-			});
-		    }	
+		for (const uid of config.adminBot) {
+			try {
+				const messageSend = await api.sendMessage(formMessage, uid);
+				successIDs.push(uid);
+				global.GoatBot.onReply.set(messageSend.messageID, {
+					commandName,
+					messageID: messageSend.messageID,
+					threadID,
+					messageIDSender: event.messageID,
+					type: "userCallAdmin"
+				});
+			}
+			catch (err) {
+				failedIDs.push({
+					adminID: uid,
+					error: err
+				});
+			}
 		}
 
 		let msg2 = "";

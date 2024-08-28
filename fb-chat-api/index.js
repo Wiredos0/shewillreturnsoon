@@ -149,6 +149,9 @@ function buildAPI(globalOptions, html, jar) {
 		mqttClient: undefined,
 		lastSeqId: irisSeqID,
 		syncToken: undefined,
+		wsReqNumber: 0,
+		wsTaskNumber: 0,
+		reqCallbacks: {},
 		mqttEndpoint,
 		region,
 		firstListen: true
@@ -194,6 +197,7 @@ function buildAPI(globalOptions, html, jar) {
 		'getThreadPictures',
 		'getUserID',
 		'getUserInfo',
+		'handleFriendRequest',
 		'handleMessageRequest',
 		'listenMqtt',
 		'logout',
@@ -214,6 +218,7 @@ function buildAPI(globalOptions, html, jar) {
 		'threadColors',
 		'unsendMessage',
 		'unfriend',
+		'editMessage',
 
 		// HTTP
 		'httpGet',
@@ -365,10 +370,11 @@ function login(loginData, options, callback) {
 	setOptions(globalOptions, options);
 
 	let prCallback = null;
+	let returnPromise;
 	if (utils.getType(callback) !== "Function" && utils.getType(callback) !== "AsyncFunction") {
 		let rejectFunc = null;
 		let resolveFunc = null;
-		var returnPromise = new Promise(function (resolve, reject) {
+		returnPromise = new Promise(function (resolve, reject) {
 			resolveFunc = resolve;
 			rejectFunc = reject;
 		});
