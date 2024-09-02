@@ -87,7 +87,7 @@ function handleReactions(event, api, message) {
   if (event.reaction == "😾") {
     if (event.senderID == api.getCurrentUserID()) {
       if (allowedUserIDs.includes(event.userID)) {
-        api.editMessage("Meow Sorry Boss!! 😿", event.messageID);
+        api.editMessage("🙂", event.messageID);
       } else {
         message.send();
       }
