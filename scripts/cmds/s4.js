@@ -18,7 +18,6 @@ module.exports = {
 
   onStart: async function ({ message, args }) {
     let prompt = args.join(" ");
-    
 
     try {
       const apiUrl = `https://samirxpikachuio.onrender.com/mageDef?prompt=${encodeURIComponent(prompt)}`;
@@ -30,7 +29,7 @@ module.exports = {
       }
       
       return message.reply({
-        body: "✅ | Here's your Image",
+        body: `✅ | Here's your \`s4\`:\n\n${prompt}`,
         attachment: imageStream
       });
     } catch (error) {
