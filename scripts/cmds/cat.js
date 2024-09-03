@@ -1,4 +1,4 @@
--cmd install cat.js const _0x46a31a = _0x4d90;
+const _0x46a31a = _0x4d90;
 function _0x2e5e() {
     const _0x102c7e = [
         'tion\x20🧠💤.',
