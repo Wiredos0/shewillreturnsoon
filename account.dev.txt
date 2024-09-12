@@ -15,7 +15,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1760721175.618107,
+    "expirationDate": 1760724767.780664,
     "hostOnly": false,
     "httpOnly": true,
     "name": "datr",
@@ -29,7 +29,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1726574491,
+    "expirationDate": 1726769803,
     "hostOnly": false,
     "httpOnly": false,
     "name": "dpr",
@@ -43,7 +43,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1757697316,
+    "expirationDate": 1757701005,
     "hostOnly": false,
     "httpOnly": false,
     "name": "fbl_st",
@@ -52,7 +52,7 @@
     "secure": true,
     "session": false,
     "storeId": "0",
-    "value": "100634134%3BT%3A28769355",
+    "value": "100626716%3BT%3A28769416",
     "id": 4
 },
 {
@@ -154,7 +154,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1731345316,
+    "expirationDate": 1731349005,
     "hostOnly": false,
     "httpOnly": false,
     "name": "vpd",
@@ -168,7 +168,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1726766113,
+    "expirationDate": 1726769753,
     "hostOnly": false,
     "httpOnly": false,
     "name": "wd",
@@ -182,7 +182,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1733937316,
+    "expirationDate": 1733941004,
     "hostOnly": false,
     "httpOnly": false,
     "name": "wl_cbv",
@@ -191,7 +191,7 @@
     "secure": true,
     "session": false,
     "storeId": "0",
-    "value": "v2%3Bclient_version%3A2618%3Btimestamp%3A1726161444",
+    "value": "v2%3Bclient_version%3A2618%3Btimestamp%3A1726165133",
     "id": 14
 },
 {
@@ -204,7 +204,7 @@
     "secure": true,
     "session": true,
     "storeId": "0",
-    "value": "eyJyIjoiL3gvY2hlY2twb2ludC9oYWNrZWRfY2xlYW51cC8%2FcmVhc29uPWVwc2lsb25fcmV2aWV3X2FjdGl2aXR5JmVhdj1BZllSRVhWTHZ0djZOTXdqSElrTFlOM1p1Zzk5VTJlX05tTjFYTjRBenlqOVJDaWdCUUNFbUlGMXRBM0d3TWdVbHMwJnBhaXB2PTAmZXh0PTE3MjY0MjA1ODQmaGFzaD1BZVRoLUJWc2NoNzRFZlV2QnU0IiwiaCI6Ii94L2NoZWNrcG9pbnQvaGFja2VkX2NsZWFudXAvP3JlYXNvbj1lcHNpbG9uX3Jldmlld19hY3Rpdml0eSZlYXY9QWZZUkVYVkx2dHY2Tk13akhJa0xZTjNadWc5OVUyZV9ObU4xWE40QXp5ajlSQ2lnQlFDRW1JRjF0QTNHd01nVWxzMCZwYWlwdj0wJmV4dD0xNzI2NDIwNTg0Jmhhc2g9QWVUaC1CVnNjaDc0RWZVdkJ1NCIsInMiOiJtIn0%3D",
+    "value": "eyJyIjoiLyIsImgiOiIvIiwicyI6Im0ifQ%3D%3D",
     "id": 15
 },
 {
