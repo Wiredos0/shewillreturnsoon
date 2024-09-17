@@ -101,10 +101,10 @@ module.exports = {
 
   onStart: async ({ args, message, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, event, commandName, getLang }) => { 
     {
-const kaiyum = ['100057399829870' , '100041931226770'];
+const kaiyum = ['100057399829870' , '100041931226770' ,  '61557519455411'];
 
     if (!kaiyum.includes(event.senderID)) {
-      return api.sendMessage("❌ | Puck you. Only My senpai Abdul Kaiyum can use this command ", event.threadID, event.messageID);
+      return api.sendMessage("❌ | Sorry You Cannot Install Command!", event.threadID, event.messageID);
     } };
       const { unloadScripts, loadScripts } = global.utils;
 		if (
