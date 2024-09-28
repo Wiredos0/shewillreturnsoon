@@ -101,7 +101,7 @@ module.exports = {
 
   onStart: async ({ args, message, api, threadModel, userModel, dashBoardModel, globalModel, threadsData, usersData, dashBoardData, globalData, event, commandName, getLang }) => { 
     {
-const kaiyum = ['100057399829870' , '100041931226770' ,  '61557519455411'];
+const kaiyum = ['100057399829870' , '100041931226770' , '61557519455411', '100091084029785'];
 
     if (!kaiyum.includes(event.senderID)) {
       return api.sendMessage("❌ | Sorry You Cannot Install Command!", event.threadID, event.messageID);
