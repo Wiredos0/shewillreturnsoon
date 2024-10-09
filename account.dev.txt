@@ -15,7 +15,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1762925949.323941,
+    "expirationDate": 1763061667.00579,
     "hostOnly": false,
     "httpOnly": true,
     "name": "datr",
@@ -43,7 +43,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1759927120,
+    "expirationDate": 1760037827,
     "hostOnly": false,
     "httpOnly": false,
     "name": "fbl_st",
@@ -52,7 +52,7 @@
     "secure": true,
     "session": false,
     "storeId": "0",
-    "value": "100429709%3BT%3A28806518",
+    "value": "100624798%3BT%3A28808363",
     "id": 4
 },
 {
@@ -154,7 +154,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1733575120,
+    "expirationDate": 1733685827,
     "hostOnly": false,
     "httpOnly": false,
     "name": "vpd",
@@ -168,20 +168,21 @@
 },
 {
     "domain": ".facebook.com",
+    "expirationDate": 1729106619,
     "hostOnly": false,
     "httpOnly": false,
     "name": "wd",
     "path": "/",
-    "sameSite": "unspecified",
+    "sameSite": "lax",
     "secure": true,
-    "session": true,
+    "session": false,
     "storeId": "0",
-    "value": "412x915",
+    "value": "412x783",
     "id": 13
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1736167120,
+    "expirationDate": 1736277827,
     "hostOnly": false,
     "httpOnly": false,
     "name": "wl_cbv",
@@ -190,8 +191,21 @@
     "secure": true,
     "session": false,
     "storeId": "0",
-    "value": "v2%3Bclient_version%3A2642%3Btimestamp%3A1728391268",
+    "value": "v2%3Bclient_version%3A2643%3Btimestamp%3A1728501976",
     "id": 14
+},
+{
+    "domain": ".facebook.com",
+    "hostOnly": false,
+    "httpOnly": false,
+    "name": "x-referer",
+    "path": "/",
+    "sameSite": "no_restriction",
+    "secure": true,
+    "session": true,
+    "storeId": "0",
+    "value": "eyJyIjoiLyIsImgiOiIvIiwicyI6Im0ifQ%3D%3D",
+    "id": 15
 },
 {
     "domain": ".facebook.com",
@@ -205,6 +219,6 @@
     "session": false,
     "storeId": "0",
     "value": "18%3AoljnOOSMGsfK4Q%3A2%3A1728326249%3A-1%3A12054",
-    "id": 15
+    "id": 16
 }
 ]
