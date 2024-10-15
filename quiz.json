@@ -397,4 +397,1768 @@
     "D": "Io"
   },
   "answer": "A"
-}]
+},
+{
+        "question": "What is the capital city of Australia?",
+        "options": {
+            "A": "Sydney",
+            "B": "Melbourne",
+            "C": "Canberra",
+            "D": "Brisbane"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which is the largest continent by area?",
+        "options": {
+            "A": "Africa",
+            "B": "Asia",
+            "C": "Europe",
+            "D": "Antarctica"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which desert is the largest in the world?",
+        "options": {
+            "A": "Sahara",
+            "B": "Arabian",
+            "C": "Gobi",
+            "D": "Kalahari"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the longest river in the world?",
+        "options": {
+            "A": "Amazon",
+            "B": "Nile",
+            "C": "Yangtze",
+            "D": "Mississippi"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Mount Everest is located in which country?",
+        "options": {
+            "A": "India",
+            "B": "China",
+            "C": "Nepal",
+            "D": "Bhutan"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which country has the most natural lakes?",
+        "options": {
+            "A": "Canada",
+            "B": "Brazil",
+            "C": "Russia",
+            "D": "United States"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the smallest country in the world?",
+        "options": {
+            "A": "Monaco",
+            "B": "Vatican City",
+            "C": "San Marino",
+            "D": "Liechtenstein"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which ocean is the largest?",
+        "options": {
+            "A": "Atlantic Ocean",
+            "B": "Indian Ocean",
+            "C": "Southern Ocean",
+            "D": "Pacific Ocean"
+        },
+        "answer": "D"
+    },
+    {
+        "question": "In which continent is the Sahara Desert located?",
+        "options": {
+            "A": "Asia",
+            "B": "Africa",
+            "C": "Australia",
+            "D": "North America"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which country has the most time zones?",
+        "options": {
+            "A": "United States",
+            "B": "China",
+            "C": "France",
+            "D": "Russia"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the longest mountain range in the world?",
+        "options": {
+            "A": "Rocky Mountains",
+            "B": "Himalayas",
+            "C": "Andes",
+            "D": "Alps"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which river flows through Paris?",
+        "options": {
+            "A": "Thames",
+            "B": "Seine",
+            "C": "Danube",
+            "D": "Rhine"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which is the largest island in the world?",
+        "options": {
+            "A": "Greenland",
+            "B": "Madagascar",
+            "C": "Borneo",
+            "D": "New Guinea"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the name of the longest river in South America?",
+        "options": {
+            "A": "Orinoco",
+            "B": "Amazon",
+            "C": "Paraguay",
+            "D": "Uruguay"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which country is home to the Great Barrier Reef?",
+        "options": {
+            "A": "Australia",
+            "B": "Indonesia",
+            "C": "Fiji",
+            "D": "Philippines"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the flattest continent?",
+        "options": {
+            "A": "Africa",
+            "B": "Australia",
+            "C": "Europe",
+            "D": "South America"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which country is the largest in the world by area?",
+        "options": {
+            "A": "United States",
+            "B": "China",
+            "C": "Russia",
+            "D": "Canada"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the capital of Japan?",
+        "options": {
+            "A": "Kyoto",
+            "B": "Tokyo",
+            "C": "Osaka",
+            "D": "Hiroshima"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which U.S. state is known as the 'Land of 10,000 Lakes'?",
+        "options": {
+            "A": "Michigan",
+            "B": "Wisconsin",
+            "C": "Minnesota",
+            "D": "Maine"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the deepest oceanic trench in the world?",
+        "options": {
+            "A": "Mariana Trench",
+            "B": "Java Trench",
+            "C": "Puerto Rico Trench",
+            "D": "Tonga Trench"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which country has the largest population?",
+        "options": {
+            "A": "India",
+            "B": "United States",
+            "C": "China",
+            "D": "Indonesia"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which river is the longest in Europe?",
+        "options": {
+            "A": "Danube",
+            "B": "Volga",
+            "C": "Rhine",
+            "D": "Elbe"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the driest place on Earth?",
+        "options": {
+            "A": "Sahara Desert",
+            "B": "Atacama Desert",
+            "C": "Gobi Desert",
+            "D": "Kalahari Desert"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which European country has the highest population?",
+        "options": {
+            "A": "United Kingdom",
+            "B": "France",
+            "C": "Italy",
+            "D": "Germany"
+        },
+        "answer": "D"
+    },
+    {
+        "question": "Which country is the largest producer of coffee?",
+        "options": {
+            "A": "Colombia",
+            "B": "Vietnam",
+            "C": "Brazil",
+            "D": "Ethiopia"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which country shares the longest land border with the United States?",
+        "options": {
+            "A": "Canada",
+            "B": "Mexico",
+            "C": "Cuba",
+            "D": "Russia"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the capital of Egypt?",
+        "options": {
+            "A": "Cairo",
+            "B": "Alexandria",
+            "C": "Luxor",
+            "D": "Giza"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which country is known as the Land of the Rising Sun?",
+        "options": {
+            "A": "South Korea",
+            "B": "Japan",
+            "C": "China",
+            "D": "Thailand"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the smallest continent by land area?",
+        "options": {
+            "A": "Europe",
+            "B": "Australia",
+            "C": "Antarctica",
+            "D": "South America"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which country is Mount Kilimanjaro located in?",
+        "options": {
+            "A": "Kenya",
+            "B": "Uganda",
+            "C": "Tanzania",
+            "D": "Ethiopia"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which is the coldest continent?",
+        "options": {
+            "A": "Europe",
+            "B": "Antarctica",
+            "C": "North America",
+            "D": "Asia"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which country is home to the ancient city of Petra?",
+        "options": {
+            "A": "Israel",
+            "B": "Jordan",
+            "C": "Syria",
+            "D": "Egypt"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the highest mountain in North America?",
+        "options": {
+            "A": "Mount Whitney",
+            "B": "Mount Elbert",
+            "C": "Denali",
+            "D": "Mount Logan"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the capital city of Argentina?",
+        "options": {
+            "A": "Buenos Aires",
+            "B": "Santiago",
+            "C": "Montevideo",
+            "D": "Lima"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which country has the longest coastline in the world?",
+        "options": {
+            "A": "Australia",
+            "B": "Russia",
+            "C": "Canada",
+            "D": "United States"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the capital city of Canada?",
+        "options": {
+            "A": "Toronto",
+            "B": "Vancouver",
+            "C": "Ottawa",
+            "D": "Montreal"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which country is the largest exporter of oil?",
+        "options": {
+            "A": "Russia",
+            "B": "Saudi Arabia",
+            "C": "United States",
+            "D": "Canada"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the highest waterfall in the world?",
+        "options": {
+            "A": "Angel Falls",
+            "B": "Niagara Falls",
+            "C": "Victoria Falls",
+            "D": "Iguazu Falls"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which river forms the border between Mexico and the United States?",
+        "options": {
+            "A": "Colorado River",
+            "B": "Mississippi River",
+            "C": "Rio Grande",
+            "D": "Columbia River"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the capital city of Italy?",
+        "options": {
+            "A": "Milan",
+            "B": "Rome",
+            "C": "Naples",
+            "D": "Venice"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the most populous city in Africa?",
+        "options": {
+            "A": "Lagos",
+            "B": "Cairo",
+            "C": "Kinshasa",
+            "D": "Johannesburg"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which country is known for having the shape of a boot?",
+        "options": {
+            "A": "Greece",
+            "B": "Italy",
+            "C": "Portugal",
+            "D": "Turkey"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which sea is the saltiest in the world?",
+        "options": {
+            "A": "Caspian Sea",
+            "B": "Black Sea",
+            "C": "Dead Sea",
+            "D": "Mediterranean Sea"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which U.S. state is the largest by area?",
+        "options": {
+            "A": "Texas",
+            "B": "Alaska",
+            "C": "California",
+            "D": "Montana"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which European country is divided into cantons?",
+        "options": {
+            "A": "Austria",
+            "B": "Germany",
+            "C": "Switzerland",
+            "D": "Belgium"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the smallest U.S. state by area?",
+        "options": {
+            "A": "Delaware",
+            "B": "Connecticut",
+            "C": "Rhode Island",
+            "D": "Vermont"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which African country was never colonized?",
+        "options": {
+            "A": "Ethiopia",
+            "B": "Nigeria",
+            "C": "Kenya",
+            "D": "Ghana"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which country is home to the Alps mountain range?",
+        "options": {
+            "A": "Austria",
+            "B": "Switzerland",
+            "C": "Germany",
+            "D": "All of the above"
+        },
+        "answer": "D"
+    },
+    {
+        "question": "Which lake is the deepest in the world?",
+        "options": {
+            "A": "Lake Superior",
+            "B": "Caspian Sea",
+            "C": "Lake Baikal",
+            "D": "Lake Victoria"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the capital of Greece?",
+        "options": {
+            "A": "Athens",
+            "B": "Thessaloniki",
+            "C": "Patras",
+            "D": "Crete"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which ocean is Bermuda located in?",
+        "options": {
+            "A": "Pacific Ocean",
+            "B": "Indian Ocean",
+            "C": "Southern Ocean",
+            "D": "Atlantic Ocean"
+        },
+        "answer": "D"
+    },
+    {
+        "question": "Which continent is known as the 'Frozen Continent'?",
+        "options": {
+            "A": "Asia",
+            "B": "Europe",
+            "C": "Antarctica",
+            "D": "North America"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which country does the Amazon Rainforest primarily reside in?",
+        "options": {
+            "A": "Colombia",
+            "B": "Peru",
+            "C": "Brazil",
+            "D": "Venezuela"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the capital city of Spain?",
+        "options": {
+            "A": "Madrid",
+            "B": "Barcelona",
+            "C": "Seville",
+            "D": "Valencia"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Who was the first President of the United States?",
+        "options": {
+            "A": "Thomas Jefferson",
+            "B": "Abraham Lincoln",
+            "C": "George Washington",
+            "D": "John Adams"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "In which year did World War II end?",
+        "options": {
+            "A": "1940",
+            "B": "1945",
+            "C": "1948",
+            "D": "1950"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What was the name of the ship that transported the Pilgrims to America in 1620?",
+        "options": {
+            "A": "Santa Maria",
+            "B": "Pinta",
+            "C": "Mayflower",
+            "D": "Victory"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Who was the first man to step on the moon?",
+        "options": {
+            "A": "Buzz Aldrin",
+            "B": "Yuri Gagarin",
+            "C": "Neil Armstrong",
+            "D": "Michael Collins"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which empire was ruled by Julius Caesar?",
+        "options": {
+            "A": "Greek Empire",
+            "B": "Persian Empire",
+            "C": "Egyptian Empire",
+            "D": "Roman Empire"
+        },
+        "answer": "D"
+    },
+    {
+        "question": "What year did the Titanic sink?",
+        "options": {
+            "A": "1912",
+            "B": "1905",
+            "C": "1915",
+            "D": "1920"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Who was the British Prime Minister during World War II?",
+        "options": {
+            "A": "Neville Chamberlain",
+            "B": "Winston Churchill",
+            "C": "Clement Attlee",
+            "D": "Margaret Thatcher"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "In which year did the French Revolution begin?",
+        "options": {
+            "A": "1789",
+            "B": "1799",
+            "C": "1776",
+            "D": "1804"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Who was the first Emperor of China?",
+        "options": {
+            "A": "Kangxi",
+            "B": "Qin Shi Huang",
+            "C": "Sun Yat-sen",
+            "D": "Mao Zedong"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which civilization built the pyramids?",
+        "options": {
+            "A": "Romans",
+            "B": "Aztecs",
+            "C": "Egyptians",
+            "D": "Greeks"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What year did the Berlin Wall fall?",
+        "options": {
+            "A": "1980",
+            "B": "1985",
+            "C": "1989",
+            "D": "1991"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Who discovered America in 1492?",
+        "options": {
+            "A": "Ferdinand Magellan",
+            "B": "Christopher Columbus",
+            "C": "Vasco da Gama",
+            "D": "Leif Erikson"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which battle marked the end of Napoleon’s rule in Europe?",
+        "options": {
+            "A": "Battle of Trafalgar",
+            "B": "Battle of Leipzig",
+            "C": "Battle of Austerlitz",
+            "D": "Battle of Waterloo"
+        },
+        "answer": "D"
+    },
+    {
+        "question": "Who assassinated Abraham Lincoln?",
+        "options": {
+            "A": "John Wilkes Booth",
+            "B": "Lee Harvey Oswald",
+            "C": "Charles Guiteau",
+            "D": "James Earl Ray"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which country gifted the Statue of Liberty to the United States?",
+        "options": {
+            "A": "France",
+            "B": "Germany",
+            "C": "Spain",
+            "D": "United Kingdom"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Who was the longest-reigning British monarch before Queen Elizabeth II?",
+        "options": {
+            "A": "Queen Victoria",
+            "B": "King George VI",
+            "C": "Queen Elizabeth I",
+            "D": "King Henry VIII"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which war was fought between the North and South regions of the United States?",
+        "options": {
+            "A": "World War I",
+            "B": "Spanish-American War",
+            "C": "American Civil War",
+            "D": "Mexican-American War"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Who was the first female Prime Minister of the United Kingdom?",
+        "options": {
+            "A": "Theresa May",
+            "B": "Margaret Thatcher",
+            "C": "Angela Merkel",
+            "D": "Indira Gandhi"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "In what year did the American Revolutionary War begin?",
+        "options": {
+            "A": "1775",
+            "B": "1783",
+            "C": "1776",
+            "D": "1791"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which famous conqueror was born in Macedonia in 356 BC?",
+        "options": {
+            "A": "Julius Caesar",
+            "B": "Alexander the Great",
+            "C": "Attila the Hun",
+            "D": "Hannibal"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What event triggered the start of World War I?",
+        "options": {
+            "A": "Assassination of Archduke Franz Ferdinand",
+            "B": "German invasion of Poland",
+            "C": "Sinking of the Lusitania",
+            "D": "Treaty of Versailles"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What was the main cause of the Cold War?",
+        "options": {
+            "A": "Religious conflict",
+            "B": "Territorial disputes",
+            "C": "Ideological differences between communism and capitalism",
+            "D": "Nuclear disarmament"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Who was the leader of the Soviet Union during World War II?",
+        "options": {
+            "A": "Vladimir Lenin",
+            "B": "Joseph Stalin",
+            "C": "Mikhail Gorbachev",
+            "D": "Leonid Brezhnev"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which ancient civilization is famous for creating the first written code of laws?",
+        "options": {
+            "A": "Egyptians",
+            "B": "Babylonians",
+            "C": "Romans",
+            "D": "Greeks"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who was the first woman to fly solo across the Atlantic Ocean?",
+        "options": {
+            "A": "Bessie Coleman",
+            "B": "Harriet Quimby",
+            "C": "Amelia Earhart",
+            "D": "Jacqueline Cochran"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which treaty ended World War I?",
+        "options": {
+            "A": "Treaty of Versailles",
+            "B": "Treaty of Tordesillas",
+            "C": "Treaty of Ghent",
+            "D": "Treaty of Paris"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Who was the first President of South Africa after the end of apartheid?",
+        "options": {
+            "A": "Nelson Mandela",
+            "B": "F.W. de Klerk",
+            "C": "Thabo Mbeki",
+            "D": "Jacob Zuma"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which battle is considered the turning point of the American Revolutionary War?",
+        "options": {
+            "A": "Battle of Saratoga",
+            "B": "Battle of Bunker Hill",
+            "C": "Battle of Yorktown",
+            "D": "Battle of Lexington"
+        },
+        "answer": "A"
+    },
+    
+    {
+        "question": "Which famous Roman leader was assassinated on the Ides of March in 44 BC?",
+        "options": {
+            "A": "Augustus",
+            "B": "Julius Caesar",
+            "C": "Nero",
+            "D": "Marcus Aurelius"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who was the first emperor of the Holy Roman Empire?",
+        "options": {
+            "A": "Charlemagne",
+            "B": "Otto the Great",
+            "C": "Henry IV",
+            "D": "Frederick Barbarossa"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "In which year did the Berlin Wall go up?",
+        "options": {
+            "A": "1945",
+            "B": "1955",
+            "C": "1961",
+            "D": "1971"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which ancient civilization was known for building Machu Picchu?",
+        "options": {
+            "A": "Maya",
+            "B": "Aztec",
+            "C": "Inca",
+            "D": "Olmec"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Who led the famous march to the sea during the American Civil War?",
+        "options": {
+            "A": "Robert E. Lee",
+            "B": "Ulysses S. Grant",
+            "C": "William Tecumseh Sherman",
+            "D": "Stonewall Jackson"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What year did the Soviet Union dissolve, marking the end of the Cold War?",
+        "options": {
+            "A": "1989",
+            "B": "1990",
+            "C": "1991",
+            "D": "1992"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What was the first successful English colony in North America?",
+        "options": {
+            "A": "Roanoke",
+            "B": "Plymouth",
+            "C": "Jamestown",
+            "D": "New Amsterdam"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Who was the leader of the Soviet Union during the Cuban Missile Crisis?",
+        "options": {
+            "A": "Joseph Stalin",
+            "B": "Nikita Khrushchev",
+            "C": "Leonid Brezhnev",
+            "D": "Mikhail Gorbachev"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which French military leader became Emperor of France after the Revolution?",
+        "options": {
+            "A": "Napoleon Bonaparte",
+            "B": "Louis XIV",
+            "C": "Charles de Gaulle",
+            "D": "Robespierre"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which U.S. president issued the Emancipation Proclamation?",
+        "options": {
+            "A": "George Washington",
+            "B": "Thomas Jefferson",
+            "C": "Abraham Lincoln",
+            "D": "Theodore Roosevelt"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What year did India gain independence from British rule?",
+        "options": {
+            "A": "1942",
+            "B": "1947",
+            "C": "1950",
+            "D": "1955"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who was the last Tsar of Russia before the revolution?",
+        "options": {
+            "A": "Nicholas II",
+            "B": "Alexander III",
+            "C": "Peter the Great",
+            "D": "Ivan the Terrible"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which ancient civilization invented the first form of writing known as cuneiform?",
+        "options": {
+            "A": "Egyptians",
+            "B": "Sumerians",
+            "C": "Phoenicians",
+            "D": "Babylonians"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which explorer is credited with being the first to circumnavigate the Earth?",
+        "options": {
+            "A": "Christopher Columbus",
+            "B": "Ferdinand Magellan",
+            "C": "Marco Polo",
+            "D": "Vasco da Gama"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who was the first African-American woman to refuse to give up her seat on a bus, sparking the Montgomery Bus Boycott?",
+        "options": {
+            "A": "Rosa Parks",
+            "B": "Sojourner Truth",
+            "C": "Harriet Tubman",
+            "D": "Fannie Lou Hamer"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What was the name of the U.S. project to develop the atomic bomb during World War II?",
+        "options": {
+            "A": "Trinity",
+            "B": "Operation Overlord",
+            "C": "Manhattan Project",
+            "D": "Enigma Project"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which event marked the beginning of the Great Depression in 1929?",
+        "options": {
+            "A": "The Dust Bowl",
+            "B": "The Stock Market Crash",
+            "C": "World War I",
+            "D": "The New Deal"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which U.S. president resigned in 1974 as a result of the Watergate scandal?",
+        "options": {
+            "A": "Lyndon B. Johnson",
+            "B": "Jimmy Carter",
+            "C": "Richard Nixon",
+            "D": "Gerald Ford"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Who was the British general who surrendered to George Washington at Yorktown, ending the American Revolutionary War?",
+        "options": {
+            "A": "General Howe",
+            "B": "General Cornwallis",
+            "C": "General Burgoyne",
+            "D": "General Gage"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What was the name of the first artificial Earth satellite launched by the Soviet Union in 1957?",
+        "options": {
+            "A": "Apollo 11",
+            "B": "Sputnik",
+            "C": "Luna 2",
+            "D": "Vostok 1"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which battle is considered the turning point of the American Civil War?",
+        "options": {
+            "A": "Battle of Gettysburg",
+            "B": "Battle of Antietam",
+            "C": "Battle of Bull Run",
+            "D": "Battle of Shiloh"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Who was the leader of Germany during World War II?",
+        "options": {
+            "A": "Adolf Hitler",
+            "B": "Kaiser Wilhelm II",
+            "C": "Otto von Bismarck",
+            "D": "Heinrich Himmler"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which explorer discovered the sea route to India by sailing around Africa?",
+        "options": {
+            "A": "Christopher Columbus",
+            "B": "Vasco da Gama",
+            "C": "Ferdinand Magellan",
+            "D": "Amerigo Vespucci"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What event began on July 14, 1789, signaling the start of the French Revolution?",
+        "options": {
+            "A": "The Storming of the Bastille",
+            "B": "The Reign of Terror",
+            "C": "The execution of Louis XVI",
+            "D": "The Tennis Court Oath"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Who was the longest-reigning British monarch before Queen Elizabeth II?",
+        "options": {
+            "A": "Queen Victoria",
+            "B": "King George III",
+            "C": "Queen Elizabeth I",
+            "D": "King Henry VIII"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What major event took place in 1066?",
+        "options": {
+            "A": "The signing of the Magna Carta",
+            "B": "The Battle of Hastings",
+            "C": "The War of the Roses",
+            "D": "The formation of the Parliament"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which empire was ruled by Genghis Khan?",
+        "options": {
+            "A": "The Ottoman Empire",
+            "B": "The Roman Empire",
+            "C": "The Mongol Empire",
+            "D": "The Persian Empire"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Who was the leader of the Soviet Union during World War II?",
+        "options": {
+            "A": "Vladimir Lenin",
+            "B": "Joseph Stalin",
+            "C": "Nikita Khrushchev",
+            "D": "Leon Trotsky"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which pharaoh of Ancient Egypt built the Great Pyramid of Giza?",
+        "options": {
+            "A": "Ramses II",
+            "B": "Tutankhamun",
+            "C": "Khufu",
+            "D": "Cleopatra"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which ancient civilization was known for its advanced road systems and architecture in South America?",
+        "options": {
+            "A": "Inca",
+            "B": "Aztec",
+            "C": "Maya",
+            "D": "Olmec"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which war was fought between the North and South regions of the United States from 1861 to 1865?",
+        "options": {
+            "A": "The Revolutionary War",
+            "B": "The Civil War",
+            "C": "The War of 1812",
+            "D": "The Mexican-American War"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who was the first President of the United States?",
+        "options": {
+            "A": "John Adams",
+            "B": "Thomas Jefferson",
+            "C": "George Washington",
+            "D": "Abraham Lincoln"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which country was the first to grant women the right to vote in 1893?",
+        "options": {
+            "A": "United States",
+            "B": "New Zealand",
+            "C": "Australia",
+            "D": "Canada"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which 19th-century movement in the U.S. sought to end slavery?",
+        "options": {
+            "A": "Women's Suffrage",
+            "B": "The Civil Rights Movement",
+            "C": "The Abolitionist Movement",
+            "D": "The Temperance Movement"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What was the primary cause of World War I?",
+        "options": {
+            "A": "Assassination of Archduke Franz Ferdinand",
+            "B": "Treaty of Versailles",
+            "C": "Invasion of Poland",
+            "D": "Formation of NATO"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which country did the U.S. purchase Alaska from in 1867?",
+        "options": {
+            "A": "Canada",
+            "B": "Russia",
+            "C": "France",
+            "D": "Great Britain"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What was the name of the first successful manned mission to land on the moon?",
+        "options": {
+            "A": "Apollo 8",
+            "B": "Apollo 11",
+            "C": "Apollo 13",
+            "D": "Gemini 4"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which treaty ended World War I?",
+        "options": {
+            "A": "Treaty of Versailles",
+            "B": "Treaty of Tordesillas",
+            "C": "Treaty of Paris",
+            "D": "Treaty of Westphalia"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Who was the first woman to win a Nobel Prize?",
+        "options": {
+            "A": "Marie Curie",
+            "B": "Rosalind Franklin",
+            "C": "Dorothy Hodgkin",
+            "D": "Jane Addams"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which event is often cited as the start of the Great Depression?",
+        "options": {
+            "A": "World War I",
+            "B": "The Wall Street Crash of 1929",
+            "C": "The Dust Bowl",
+            "D": "The signing of the New Deal"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who discovered the Americas in 1492?",
+        "options": {
+            "A": "Leif Erikson",
+            "B": "Christopher Columbus",
+            "C": "Hernán Cortés",
+            "D": "John Cabot"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who was the first ruler of the unified Kingdom of Great Britain?",
+        "options": {
+            "A": "Queen Elizabeth I",
+            "B": "King James I",
+            "C": "King Henry VIII",
+            "D": "King Charles II"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What was the name of the ship that carried the Pilgrims to North America in 1620?",
+        "options": {
+            "A": "The Santa Maria",
+            "B": "The Mayflower",
+            "C": "The HMS Beagle",
+            "D": "The Pinta"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which war was fought between the United States and Mexico from 1846 to 1848?",
+        "options": {
+            "A": "The Spanish-American War",
+            "B": "The Mexican-American War",
+            "C": "The Civil War",
+            "D": "The Texas Revolution"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who was the leader of the Indian independence movement that used nonviolent resistance?",
+        "options": {
+            "A": "Jawaharlal Nehru",
+            "B": "Subhas Chandra Bose",
+            "C": "Mahatma Gandhi",
+            "D": "Indira Gandhi"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which famous document begins with the words 'We the People'?",
+        "options": {
+            "A": "The Magna Carta",
+            "B": "The Declaration of Independence",
+            "C": "The Constitution of the United States",
+            "D": "The Bill of Rights"
+        },
+        "answer": "C"
+    },
+    
+    {
+        "question": "What is the unit of force in the International System of Units (SI)?",
+        "options": {
+            "A": "Newton",
+            "B": "Joule",
+            "C": "Pascal",
+            "D": "Watt"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which law states that an object in motion stays in motion unless acted upon by an external force?",
+        "options": {
+            "A": "Newton's First Law",
+            "B": "Newton's Second Law",
+            "C": "Newton's Third Law",
+            "D": "Law of Universal Gravitation"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the speed of light in a vacuum?",
+        "options": {
+            "A": "3.00 × 10^8 m/s",
+            "B": "9.81 m/s²",
+            "C": "6.67 × 10^-11 N(m²/kg²)",
+            "D": "2.99 × 10^6 m/s"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which fundamental force is responsible for keeping planets in orbit around the Sun?",
+        "options": {
+            "A": "Gravitational Force",
+            "B": "Electromagnetic Force",
+            "C": "Strong Nuclear Force",
+            "D": "Weak Nuclear Force"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the measure of the average kinetic energy of the particles in a substance?",
+        "options": {
+            "A": "Heat",
+            "B": "Temperature",
+            "C": "Work",
+            "D": "Power"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who discovered the law of electromagnetic induction?",
+        "options": {
+            "A": "Isaac Newton",
+            "B": "Michael Faraday",
+            "C": "Albert Einstein",
+            "D": "James Clerk Maxwell"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the phenomenon where light bends when it passes from one medium to another?",
+        "options": {
+            "A": "Reflection",
+            "B": "Diffraction",
+            "C": "Refraction",
+            "D": "Polarization"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the term for the resistance of any physical object to a change in its state of motion?",
+        "options": {
+            "A": "Inertia",
+            "B": "Momentum",
+            "C": "Energy",
+            "D": "Velocity"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which subatomic particle has a positive electric charge?",
+        "options": {
+            "A": "Electron",
+            "B": "Neutron",
+            "C": "Proton",
+            "D": "Photon"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the principle that states energy cannot be created or destroyed?",
+        "options": {
+            "A": "Law of Conservation of Energy",
+            "B": "Law of Thermodynamics",
+            "C": "Law of Universal Gravitation",
+            "D": "Law of Electromagnetism"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What type of wave is sound classified as?",
+        "options": {
+            "A": "Transverse",
+            "B": "Longitudinal",
+            "C": "Electromagnetic",
+            "D": "Mechanical"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which phenomenon explains why an object appears to be different in size or shape when viewed from different angles?",
+        "options": {
+            "A": "Parallax",
+            "B": "Doppler Effect",
+            "C": "Interference",
+            "D": "Diffraction"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which physicist is credited with developing the theory of relativity?",
+        "options": {
+            "A": "Galileo Galilei",
+            "B": "Isaac Newton",
+            "C": "Albert Einstein",
+            "D": "Niels Bohr"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the energy an object possesses due to its motion called?",
+        "options": {
+            "A": "Potential Energy",
+            "B": "Kinetic Energy",
+            "C": "Thermal Energy",
+            "D": "Nuclear Energy"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the unit of electric current?",
+        "options": {
+            "A": "Ohm",
+            "B": "Volt",
+            "C": "Ampere",
+            "D": "Coulomb"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which principle explains that a fluid in motion will exert less pressure than when it is stationary?",
+        "options": {
+            "A": "Archimedes' Principle",
+            "B": "Bernoulli's Principle",
+            "C": "Pascal's Law",
+            "D": "Boyle's Law"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Who is considered the father of modern physics?",
+        "options": {
+            "A": "Isaac Newton",
+            "B": "Galileo Galilei",
+            "C": "Albert Einstein",
+            "D": "Niels Bohr"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which subatomic particle has no electric charge?",
+        "options": {
+            "A": "Proton",
+            "B": "Neutron",
+            "C": "Electron",
+            "D": "Photon"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the smallest unit of an element that retains the properties of that element?",
+        "options": {
+            "A": "Atom",
+            "B": "Molecule",
+            "C": "Proton",
+            "D": "Electron"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the force that opposes the motion of objects through air called?",
+        "options": {
+            "A": "Tension",
+            "B": "Normal Force",
+            "C": "Air Resistance",
+            "D": "Gravitational Force"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the bending of waves around the corners of an obstacle or through an aperture?",
+        "options": {
+            "A": "Diffraction",
+            "B": "Reflection",
+            "C": "Refraction",
+            "D": "Interference"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the unit of frequency in the SI system?",
+        "options": {
+            "A": "Hertz",
+            "B": "Joule",
+            "C": "Tesla",
+            "D": "Watt"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the name of the force that keeps electrons bound to the nucleus in an atom?",
+        "options": {
+            "A": "Gravitational Force",
+            "B": "Electromagnetic Force",
+            "C": "Strong Nuclear Force",
+            "D": "Weak Nuclear Force"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the term for the amount of space an object occupies?",
+        "options": {
+            "A": "Density",
+            "B": "Mass",
+            "C": "Volume",
+            "D": "Weight"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What law states that the pressure of a gas is inversely proportional to its volume at constant temperature?",
+        "options": {
+            "A": "Boyle's Law",
+            "B": "Charles's Law",
+            "C": "Pascal's Law",
+            "D": "Avogadro's Law"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which type of energy is stored in an object due to its position?",
+        "options": {
+            "A": "Kinetic Energy",
+            "B": "Potential Energy",
+            "C": "Thermal Energy",
+            "D": "Chemical Energy"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the study of motion without regard to the forces that cause it called?",
+        "options": {
+            "A": "Kinetics",
+            "B": "Kinematics",
+            "C": "Thermodynamics",
+            "D": "Dynamics"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the SI unit of power?",
+        "options": {
+            "A": "Joule",
+            "B": "Newton",
+            "C": "Watt",
+            "D": "Pascal"
+        },
+        "answer": "C"
+    },
+    
+    {
+        "question": "Which law states that for every action, there is an equal and opposite reaction?",
+        "options": {
+            "A": "Newton's First Law",
+            "B": "Newton's Second Law",
+            "C": "Newton's Third Law",
+            "D": "Law of Conservation of Momentum"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the name of the force that resists the motion of two surfaces sliding against each other?",
+        "options": {
+            "A": "Tension",
+            "B": "Friction",
+            "C": "Gravitational Force",
+            "D": "Normal Force"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which wave phenomenon occurs when two waves overlap and combine to form a new wave?",
+        "options": {
+            "A": "Diffraction",
+            "B": "Reflection",
+            "C": "Interference",
+            "D": "Refraction"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the term for the maximum displacement of a wave from its rest position?",
+        "options": {
+            "A": "Wavelength",
+            "B": "Frequency",
+            "C": "Amplitude",
+            "D": "Period"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the temperature at which all molecular motion stops called?",
+        "options": {
+            "A": "Absolute Zero",
+            "B": "Boiling Point",
+            "C": "Freezing Point",
+            "D": "Melting Point"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "Which scientist is famous for his work on the laws of planetary motion?",
+        "options": {
+            "A": "Isaac Newton",
+            "B": "Galileo Galilei",
+            "C": "Johannes Kepler",
+            "D": "Albert Einstein"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the force that pulls objects toward the center of the Earth?",
+        "options": {
+            "A": "Centrifugal Force",
+            "B": "Friction",
+            "C": "Gravity",
+            "D": "Magnetism"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What type of energy is associated with the movement of atoms and molecules in a substance?",
+        "options": {
+            "A": "Kinetic Energy",
+            "B": "Thermal Energy",
+            "C": "Chemical Energy",
+            "D": "Potential Energy"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the term for the amount of matter in an object?",
+        "options": {
+            "A": "Weight",
+            "B": "Volume",
+            "C": "Density",
+            "D": "Mass"
+        },
+        "answer": "D"
+    },
+    {
+        "question": "Which theory explains the behavior of particles at the atomic and subatomic levels?",
+        "options": {
+            "A": "General Relativity",
+            "B": "Quantum Theory",
+            "C": "String Theory",
+            "D": "Classical Mechanics"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What type of radiation has the shortest wavelength?",
+        "options": {
+            "A": "Infrared",
+            "B": "X-rays",
+            "C": "Gamma rays",
+            "D": "Ultraviolet"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which law relates the current, voltage, and resistance in an electric circuit?",
+        "options": {
+            "A": "Faraday's Law",
+            "B": "Coulomb's Law",
+            "C": "Ohm's Law",
+            "D": "Ampere's Law"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the term for the measure of an object's resistance to changes in its rotational motion?",
+        "options": {
+            "A": "Torque",
+            "B": "Moment of Inertia",
+            "C": "Angular Velocity",
+            "D": "Centripetal Force"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which law states that the pressure of a gas is directly proportional to its temperature at constant volume?",
+        "options": {
+            "A": "Boyle's Law",
+            "B": "Charles's Law",
+            "C": "Pascal's Law",
+            "D": "Coulomb's Law"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the name of the force that causes an object to move in a circular path?",
+        "options": {
+            "A": "Centripetal Force",
+            "B": "Gravitational Force",
+            "C": "Tension",
+            "D": "Friction"
+        },
+        "answer": "A"
+    },
+    {
+        "question": "What is the name of the process where a heavy atomic nucleus splits into smaller, lighter nuclei?",
+        "options": {
+            "A": "Nuclear Fusion",
+            "B": "Nuclear Fission",
+            "C": "Alpha Decay",
+            "D": "Beta Decay"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "Which type of mirror has a reflecting surface that curves inward like the inside of a bowl?",
+        "options": {
+            "A": "Convex Mirror",
+            "B": "Concave Mirror",
+            "C": "Plane Mirror",
+            "D": "Spherical Mirror"
+        },
+        "answer": "B"
+    },
+    {
+        "question": "What is the term for the amount of energy required to raise the temperature of one kilogram of a substance by one degree Celsius?",
+        "options": {
+            "A": "Thermal Conductivity",
+            "B": "Latent Heat",
+            "C": "Specific Heat Capacity",
+            "D": "Heat of Vaporization"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "What is the term for the time taken for one complete cycle of a wave?",
+        "options": {
+            "A": "Frequency",
+            "B": "Amplitude",
+            "C": "Period",
+            "D": "Wavelength"
+        },
+        "answer": "C"
+    },
+    {
+        "question": "Which law describes the force between two point charges as inversely proportional to the square of the distance between them?",
+        "options": {
+            "A": "Faraday's Law",
+            "B": "Coulomb's Law",
+            "C": "Gauss's Law",
+            "D": "Ohm's Law"
+        },
+        "answer": "B"
+    }
+  ]
