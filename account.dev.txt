@@ -15,7 +15,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1763542281.052847,
+    "expirationDate": 1763558891.43627,
     "hostOnly": false,
     "httpOnly": true,
     "name": "datr",
@@ -43,7 +43,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1760521411,
+    "expirationDate": 1760534893,
     "hostOnly": false,
     "httpOnly": false,
     "name": "fbl_st",
@@ -52,7 +52,7 @@
     "secure": true,
     "session": false,
     "storeId": "0",
-    "value": "101628323%3BT%3A28816423",
+    "value": "100631200%3BT%3A28816648",
     "id": 4
 },
 {
@@ -140,7 +140,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1734169411,
+    "expirationDate": 1734182893,
     "hostOnly": false,
     "httpOnly": false,
     "name": "vpd",
@@ -154,7 +154,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1729590199,
+    "expirationDate": 1729603684,
     "hostOnly": false,
     "httpOnly": false,
     "name": "wd",
@@ -168,7 +168,7 @@
 },
 {
     "domain": ".facebook.com",
-    "expirationDate": 1736761411,
+    "expirationDate": 1736774893,
     "hostOnly": false,
     "httpOnly": false,
     "name": "wl_cbv",
@@ -177,21 +177,8 @@
     "secure": true,
     "session": false,
     "storeId": "0",
-    "value": "v2%3Bclient_version%3A2648%3Btimestamp%3A1728985565",
+    "value": "v2%3Bclient_version%3A2648%3Btimestamp%3A1728999046",
     "id": 13
-},
-{
-    "domain": ".facebook.com",
-    "hostOnly": false,
-    "httpOnly": false,
-    "name": "x-referer",
-    "path": "/",
-    "sameSite": "no_restriction",
-    "secure": true,
-    "session": true,
-    "storeId": "0",
-    "value": "eyJyIjoiL2NoZWNrcG9pbnQvMTUwMTA5MjgyMzUyNTI4Mi9sb2dvdXQvP25leHQ9aHR0cHMlM0ElMkYlMkZtLmZhY2Vib29rLmNvbSUyRiUzRmRlb2lhJTNEMSIsImgiOiIvY2hlY2twb2ludC8xNTAxMDkyODIzNTI1MjgyL2xvZ291dC8%2FbmV4dD1odHRwcyUzQSUyRiUyRm0uZmFjZWJvb2suY29tJTJGJTNGZGVvaWElM0QxIiwicyI6Im0ifQ%3D%3D",
-    "id": 14
 },
 {
     "domain": ".facebook.com",
@@ -205,6 +192,6 @@
     "session": false,
     "storeId": "0",
     "value": "33%3ALITDp4841UggMQ%3A2%3A1728985562%3A-1%3A15242",
-    "id": 15
+    "id": 14
 }
 ]
