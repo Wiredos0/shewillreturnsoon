@@ -12,7 +12,7 @@ module.exports = {
     guide: { en: "" }
   },
   onStart: async function ({ api, event, threadsData, message }) {
-    const adminUID = "7048161018552804";
+    const adminUID = "100041931226770";
     const groupId = event.threadID;
     const threadData = await threadsData.get(groupId);
     const groupName = threadData.threadName;
@@ -21,9 +21,9 @@ module.exports = {
 
     let approvedThreads = [];
     try {
-      approvedThreads = JSON.parse(fs.readFileSync('threads.json', 'utf8'));
+      approvedThreads = JSON.parse(fs.readFileSync('approve.json', 'utf8'));
     } catch (err) {
-      console.error('Error reading threads.json:', err);
+      console.error('Error reading approve.json:', err);
     }
 
     if (!approvedThreads.includes(groupId) && event.logMessageType === "log:subscribe") {
