@@ -1,10 +1,11 @@
 const { getStreamFromURL } = global.utils;
+let pairMatchingEnabled = true; // Default to "on"
 
 module.exports = {
   config: {
     name: "pair",
     aliases: [],
-    version: "1.0",
+    version: "1.1",
     author: "Sahadat Hossen",
     countDown: 60,
     shortDescription: {
@@ -12,10 +13,22 @@ module.exports = {
       vi: ""
     },
     category: "fun",
-    guide: "{prefix}pair"
+    guide: "{prefix}pair or\n- pair on/off <for pair matching off>"
   },
 
-  onStart: async function({ event, threadsData, message, usersData }) {
+  onStart: async function({ event, message, args, threadsData, usersData }) {
+    if (args[0] === "on") {
+      pairMatchingEnabled = true;
+      return message.reply("Pair matching is now ON!");
+    } else if (args[0] === "off") {
+      pairMatchingEnabled = false;
+      return message.reply("Pair matching is now OFF!");
+    }
+
+    if (!pairMatchingEnabled) {
+      return message.reply("Miw Maww Pair Matching Is Currently Turned OFF! 😺❌");
+    }
+
     const uidI = event.senderID;
     const avatarUrl1 = await usersData.getAvatarUrl(uidI);
     const name1 = await usersData.getName(uidI);
@@ -96,7 +109,7 @@ module.exports = {
 
 🎉 Congratulations on your perfect match! 💝
 
-✉️ Fun fact: ${randomfunnyNote}`,
+✉ Fun fact: ${randomfunnyNote}`,
       attachment: [
         await getStreamFromURL(`${avatarUrl1}`),
         await getStreamFromURL(`${avatarUrl2}`)
