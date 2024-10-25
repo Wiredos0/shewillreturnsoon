@@ -48,7 +48,7 @@ module.exports = {
     const groupNickName =
       threadInfo.nicknames && threadInfo.nicknames[uid]
         ? threadInfo.nicknames[uid]
-        : "No Nickname";
+        : "Not Set";
 
     // Retrieve the total message count for the user
     const members = await threadsData.get(event.threadID, "members");
@@ -94,7 +94,7 @@ module.exports = {
 
 ╭───── [ 𝐔𝐒𝐄𝐑 𝐒𝐓𝐀𝐓𝐔𝐒 ]
 ╰ ◈ Money: $${formatMoney(money)}
-╰ ◈ Rank: #${rank}/${allUser.length}
+╰ ◈ Rank: #${rank} out of ${allUser.length}
 ╰ ◈ Money Rank: #${moneyRank}/${allUser.length}
 ╰ ◈ Total Messages: ${messageCount}`;
 
