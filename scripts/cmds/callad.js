@@ -1,4 +1,4 @@
--cmd install callad.js const { getStreamsFromAttachment, log } = global.utils;
+const { getStreamsFromAttachment, log } = global.utils;
 const mediaTypes = ["photo", 'png', "animated_image", "video", "audio"];
 
 module.exports = {
