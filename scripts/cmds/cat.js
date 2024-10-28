@@ -1,5 +1,8 @@
 const axios = require("axios");
 
+const generateRandomUID = () => Math.floor(Math.random() * 10) + 1;
+const userCode = "Code-143";
+
 const baseApiUrl = async () => {
     const response = await axios.get(
         `https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`
@@ -15,21 +18,29 @@ const nehallovesMeta = async ({ api, event, args, usersData, message }) => {
     try {
         if (!args[0]) {
             const responses = [
-                "Bolo miew", "hum", "Meow meow 😺", "Yesh meow ", 
-                "miw meow", "Hey 😺✨", "hey I am here😃","kemon acho meow", "yes yes?" 
+                "Bolo meow.? 😺", "Hum bole felo", "bolbq kichu?", "Meow Meow Meowwwwwww 😻",
+                " YES, Meowww 😻🐾", "HEY, Yessss Meoww 😼🐾", "hey I am here😻"
             ];
-            const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-            return message.reply(randomResponse);
+            return message.reply(responses[Math.floor(Math.random() * responses.length)]);
         }
 
         if (args[0].toLowerCase() === "teach") {
             const [messageToTeach, replies] = userMessage.replace("teach ", "").split(/\s*-\s*/);
-            if (!replies) {
-                return message.reply("❌ | Invalid format! Use teach [YourMessage] - [Reply1], [Reply2], [Reply3]...");
-            }
-            const response = await axios.get(`${link}?teach=${messageToTeach}&reply=${replies}&senderID=${userId}`);
-            const userName = await usersData.getName(userId);
-            return message.reply(`✅ Replies added: ${response.data.message}\nTeacher: ${userName || "none"}\nTeaches: ${response.data.teachs}`);
+            if (!replies) return message.reply("❌ | Invalid format! Use teach [YourMessage] - [Reply1], [Reply2], [Reply3]...");
+            const maskedUserID = generateRandomUID();
+            const response = await axios.get(`${link}?teach=${messageToTeach}&reply=${replies}&senderID=${maskedUserID}`);
+            return message.reply(`✅ Replies added: ${response.data.message}\nTeacher: ${userCode}\nTeaches: ${response.data.teachs}`);
+        }
+
+        if (args[0].toLowerCase() === "remove") {
+            const messageToRemove = userMessage.replace("remove ", "");
+            const response = await axios.get(`${link}?remove=${messageToRemove}&senderID=${userCode}`);
+            return message.reply(`✅ ${response.data.message}`);
+        }
+
+        if (args[0].toLowerCase() === "list") {
+            const response = await axios.get(`${link}?list=${userId}`);
+            return message.reply(`Current responses:\n${response.data.responses.join("\n")}`);
         }
 
         const response = await axios.get(`${link}?text=${userMessage}`);
@@ -41,7 +52,7 @@ const nehallovesMeta = async ({ api, event, args, usersData, message }) => {
                 });
             }
         });
-
+        
     } catch (error) {
         console.error("Error during onStart:", error);
         return message.reply("An error occurred, check the console for details.");
@@ -51,14 +62,14 @@ const nehallovesMeta = async ({ api, event, args, usersData, message }) => {
 const metalovesNehal = {
     name: "cat",
     aliases: [],
-    version: "1.0",
-    author: "NZ R | NARUTO",
-    countDown: 0,
+    version: "1.1",
+    author: "NZ R | NOTHING",
+    countDown: 10,
     role: 0,
-    description: "Talk with CaT Araa",
+    description: "Enhanced command for user interaction.",
     category: "box chat",
     guide: {
-        en: "{pn} <anyMessage>",
+        en: "{pn}[anyMessage]",
     },
 };
 
