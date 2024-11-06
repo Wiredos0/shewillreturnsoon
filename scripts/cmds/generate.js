@@ -1,44 +1,58 @@
 const axios = require('axios');
-const path = require('path');
-const fs = require('fs-extra');
 
 module.exports = {
   config: {
     name: "generate",
-    aliases: ["gen","genx"],
-    version: "1.0",
-    author: "Vex_Kshitiz",
+    aliases: ["gen"],
+    author: "NZ R",
     countDown: 60,
-    role: 0,
-    longDescription: {
-      vi: '',
-      en: "Generate images"
-    },
-    category: "ai",
+    category: "Image",
     guide: {
-      vi: '',
-      en: "{pn} <prompt>"
-    }
+      en: "Use the command followed by a description to generate an image. E.g., imagine a futuristic cityscape"
+    },
   },
+  onStart: async ({ message: { reply: r, unsend }, args: a }) => {
+    if (a.length === 0) {
+      return r("IMAGINE GENERATOR USAGE\n\n" + module.exports.config.guide.en);
+    }
 
-  onStart: async function ({ api, commandName, event, args }) {
+    let pr = a.join(" ");
+    if (!pr) return r("Please provide a query for image generation.");
+
+    const requestStartTime = Date.now(); 
+    const waitingMessage = await r("⏳ Generating images... Please wait...");
+    const waitingMessageID = waitingMessage.messageID; 
+
     try {
-      api.setMessageReaction("✅", event.messageID, (a) => {}, true);
-      const prompt = args.join(' ');
+      const imageURLs = Array(4).fill().map((_, index) => 
+        `https://imagine-v2-by-nzr-meta.onrender.com/generate?prompt=${encodeURIComponent(pr)}&variation=${index + 1}`
+      );
 
-      const apiKey = 'YOUR_API_KEY_HERE';  // Replace with your actual API key
-      const response = await axios.get(`https://dall-e-tau-steel.vercel.app/kshitiz?prompt=${encodeURIComponent(prompt)}&apiKey=${apiKey}`);
-      const imageUrl = response.data.response;
+      const generationStartTime = Date.now(); 
 
-      const imgResponse = await axios.get(imageUrl, { responseType: 'arraybuffer' });
-      const imgPath = path.join(__dirname, 'cache', 'dalle_image.jpg');
-      await fs.outputFile(imgPath, imgResponse.data);
-      const imgData = fs.createReadStream(imgPath);
+      const imageResponses = await Promise.all(
+        imageURLs.map(url => axios({
+          url: url,
+          method: 'GET',
+          responseType: 'stream'
+        }))
+      );
 
-      await api.sendMessage({ body: `Generated Successfully ✅\n\n${prompt}`, attachment: imgData }, event.threadID, event.messageID);
-    } catch (error) {
-      console.error("Error:", error);
-      api.sendMessage("Error generating image. Please try again later.", event.threadID, event.messageID);
+      const attachments = imageResponses.map(response => response.data);
+
+      const generatorTime = ((Date.now() - generationStartTime) / 1000).toFixed(2);
+      unsend(waitingMessageID);
+
+      const totalTime = ((Date.now() - requestStartTime) / 1000).toFixed(2); 
+
+      r({
+        body: `✅ | Imagine AI Images Generated\n• Images Generated in: ${generatorTime} seconds\n`,
+        attachment: attachments
+      });
+
+    } catch (err) {
+      unsend(waitingMessageID);
+      r(`❌ | Error: ${err.message}`);
     }
   }
 };
