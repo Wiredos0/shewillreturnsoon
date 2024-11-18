@@ -1,268 +1,151 @@
 const axios = require("axios");
-const fs = require("fs-extra");
-const { getStreamFromURL, downloadFile, formatNumber } = global.utils;
-const path = require("path");
-
-async function searchYoutube(query) {
-  try {
-    const response = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&key=AIzaSyC_CVzKGFtLAqxNdAZ_EyLbL0VRGJ-FaMU&type=video&maxResults=6`);
-    return response.data.items.map(item => ({
-      id: item.id.videoId,
-      title: item.snippet.title,
-      channel: item.snippet.channelTitle,
-      thumbnail: item.snippet.thumbnails.high.url
-    }));
-  } catch (error) {
-    throw new Error(`Failed to search YouTube: ${error.message}`);
-  }
-}
-
-async function getVideoInfo(url) {
-  try {
-    const response = await axios.get(`https://www.samirxpikachu.run.place/ytb?url=${url}`);
-    return response.data;
-  } catch (error) {
-    throw new Error(`Failed to fetch video info: ${error.message}`);
-  }
-}
-
-async function downloadThumbnail(url, index) {
-  const tempPath = path.join(__dirname, "tmp", `thumbnail_${index}.jpg`);
-  await downloadFile(url, tempPath);
-  return tempPath;
-}
+const fs = require("fs");
+const baseApiUrl = async () => {
+  const base = await axios.get(
+    `https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json`
+  );
+  return base.data.api;
+};
 
 module.exports = {
   config: {
     name: "ytb",
-    version: "3.22",
-    author: "NTKhang & Fixed by Samir Œ",
+    version: "1.2.0",
+    aliases: [],
+    author: "Sahadat Hossen",
     countDown: 60,
     role: 0,
     description: {
-      vi: "Tải video, audio hoặc xem thông tin video trên YouTube",
-      en: "Download video, audio or view video information on YouTube"
+      en: "Download audio or video from YouTube"
     },
     category: "media",
     guide: {
-      vi: "   {pn} [video|-v] [<tên video>|<link video>]: dùng để tải video từ youtube."
-        + "\n   {pn} [audio|-a] [<tên video>|<link video>]: dùng để tải audio từ youtube"
-        + "\n   {pn} [info|-i] [<tên video>|<link video>]: dùng để xem thông tin video từ youtube"
-        + "\n   Ví dụ:"
-        + "\n    {pn} -v Fallen Kingdom"
-        + "\n    {pn} -a Fallen Kingdom"
-        + "\n    {pn} -i Fallen Kingdom",
-      en: "   {pn} [video|-v] [<video name>|<video link>]: use to download video from youtube."
-        + "\n   {pn} [audio|-a] [<video name>|<video link>]: use to download audio from youtube"
-        + "\n   {pn} [info|-i] [<video name>|<video link>]: use to view video information from youtube"
-        + "\n   Example:"
-        + "\n    {pn} -v Fallen Kingdom"
-        + "\n    {pn} -a Fallen Kingdom"
-        + "\n    {pn} -i Fallen Kingdom"
+      en: `{pn} [video|-v] [<video name>|<video link>]: Download video from YouTube\n   {pn} [audio|-a] [<video name>|<video link>]: Download audio from YouTube\n\n   Example:\n    {pn} -v Fallen Kingdom\n    {pn} -a Fallen Kingdom`
     }
   },
-
-  langs: {
-    vi: {
-      error: "❌ Đã xảy ra lỗi: %1",
-      noResult: "⭕ Không có kết quả tìm kiếm nào phù hợp với từ khóa %1",
-      choose: "%1\n\nReply tin nhắn với số để chọn hoặc nội dung bất kì để gỡ",
-      video: "video",
-      audio: "âm thanh",
-      downloading: "⬇️ Đang tải xuống %1 \"%2\"",
-      downloading2: "⬇️ Đang tải xuống %1 \"%2\"\n🔃 Tốc độ: %3MB/s\n⏸️ Đã tải: %4/%5MB (%6%)\n⏳ Ước tính thời gian còn lại: %7 giây",
-      noVideo: "⭕ Rất tiếc, không tìm thấy video nào có dung lượng nhỏ hơn 83MB",
-      noAudio: "⭕ Rất tiếc, không tìm thấy audio nào có dung lượng nhỏ hơn 26MB",
-      info: "💠 Tiêu đề: %1\n🏪 Kênh: %2\n⏱ Thời lượng: %3\n🔠 ID: %4\n🔗 Link: %5"
-    },
-    en: {
-      error: "❌ An error occurred: %1",
-      noResult: "⭕ No search results match the keyword %1",
-      choose: "%1\n\nReply to the message with a number to choose or any content to cancel",
-      video: "video",
-      audio: "audio",
-      downloading: "⬇️ Downloading %1 \"%2\"",
-      downloading2: "⬇️ Downloading %1 \"%2\"\n🔃 Speed: %3MB/s\n⏸️ Downloaded: %4/%5MB (%6%)\n⏳ Estimated time remaining: %7 seconds",
-      noVideo: "⭕ Sorry, no video was found with a size less than 83MB",
-      noAudio: "⭕ Sorry, no audio was found with a size less than 26MB",
-      info: "💠 Title: %1\n🏪 Channel: %2\n⏱ Duration: %3\n🔠 ID: %4\n🔗 Link: %5"
+  onStart: async ({ api, args, event, commandName, message }) => {
+    const checkurl = /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))((\w|-){11})(?:\S+)?$/;
+    let videoID;
+    const mode = args[0]; // -a or -v
+    if (!["-a", "audio", "-v", "video"].includes(mode)) {
+      return api.sendMessage("Please specify '-a' for audio or '-v' for video.", event.threadID, event.messageID);
     }
-  },
-
-  onStart: async function ({ args, message, event, commandName, getLang }) {
-    let type;
-    switch (args[0]) {
-      case "-v":
-      case "video":
-        type = "video";
-        break;
-      case "-a":
-      case "-s":
-      case "audio":
-      case "sing":
-        type = "audio";
-        break;
-      case "-i":
-      case "info":
-        type = "info";
-        break;
-      default:
-        return message.SyntaxError();
-    }
-
-    const input = args.slice(1).join(" ");
-    if (!input) return message.SyntaxError();
-
-    const youtubeRegex = /^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$/;
-    
-    if (youtubeRegex.test(input)) {
+    args.shift(); // Remove mode from arguments
+    const urlYtb = checkurl.test(args[0]);
+    if (urlYtb) {
+      const match = args[0].match(checkurl);
+      videoID = match ? match[1] : null;
+      const format = ["-a", "audio"].includes(mode) ? "mp3" : "mp4";
       try {
-        const videoInfo = await getVideoInfo(input);
-        await handle({ type, videoInfo, message, getLang });
-      } catch (err) {
-        return message.reply(getLang("error", err.message));
-      }
-    } else {
-      try {
-        const searchResults = await searchYoutube(input);
-        if (searchResults.length === 0) {
-          return message.reply(getLang("noResult", input));
-        }
-
-        let msg = "";
-        for (let i = 0; i < searchResults.length; i++) {
-          msg += `${i + 1}. ${searchResults[i].title} - ${searchResults[i].channel}\n\n`;
-        }
-
-        const thumbnailPaths = await Promise.all(
-          searchResults.map((result, index) => downloadThumbnail(result.thumbnail, index))
+        const { data: { title, downloadLink, quality } } = await axios.get(
+          `${await baseApiUrl()}/ytDl3?link=${videoID}&format=${format}`
         );
-
-        const response = await message.reply({
-          body: getLang("choose", msg),
-          attachment: thumbnailPaths.map(path => fs.createReadStream(path))
-        });
-
-        // Clean up temporary thumbnail files
-        thumbnailPaths.forEach(path => fs.unlink(path).catch(console.error));
-
-        if (response && response.messageID) {
-          global.GoatBot.onReply.set(response.messageID, {
-            commandName,
-            messageID: response.messageID,
-            author: event.senderID,
-            type,
-            searchResults
-          });
-        } else {
-          console.error("Failed to get messageID from response");
-          return message.reply(getLang("error", "Failed to process the request"));
-        }
-
+        return api.sendMessage(
+          {
+            body: `• Title: ${title}\n• Quality: ${quality || "N/A"}`,
+            attachment: await dipto(downloadLink, `output.${format}`)
+          },
+          event.threadID,
+          () => fs.unlinkSync(`output.${format}`),
+          event.messageID
+        );
       } catch (err) {
-        console.error(err);
-        return message.reply(getLang("error", err.message));
+        return api.sendMessage("❌ Error occurred: " + err.message, event.threadID, event.messageID);
       }
     }
-  },
-
-  onReply: async function ({ message, event, getLang, Reply }) {
-    const { type, searchResults, messageID } = Reply;
-    const choice = parseInt(event.body);
-
-    if (isNaN(choice) || choice < 1 || choice > searchResults.length) {
-      return message.reply(getLang("error", "Invalid choice"));
-    }
-
-    // Unsend the search results message
-    await message.unsend(messageID);
-
-    const selectedVideo = searchResults[choice - 1];
-    const videoUrl = `https://www.youtube.com/watch?v=${selectedVideo.id}`;
-
+    let keyWord = args.join(" ");
+    keyWord = keyWord.includes("?feature=share") ? keyWord.replace("?feature=share", "") : keyWord;
+    const maxResults = 6;
+    let result;
     try {
-      const videoInfo = await getVideoInfo(videoUrl);
-      await handle({ type, videoInfo, message, getLang });
+      result = (
+        (await axios.get(`${await baseApiUrl()}/ytFullSearch?songName=${keyWord}`)).data
+      ).slice(0, maxResults);
     } catch (err) {
-      return message.reply(getLang("error", err.message));
+      return api.sendMessage("❌ Error occurred: " + err.message, event.threadID, event.messageID);
+    }
+    if (result.length == 0)
+      return api.sendMessage(
+        "⭕ No search results match the keyword: " + keyWord,
+        event.threadID,
+        event.messageID
+      );
+    let msg = "";
+    let i = 1;
+    const thumbnails = [];
+    for (const info of result) {
+      thumbnails.push(diptoSt(info.thumbnail, "photo.jpg"));
+      msg += `${i++}. ${info.title}\nTime: ${info.time}\nChannel: ${info.channel.name}\n\n`;
+    }
+    api.sendMessage(
+      {
+        body: msg + "Reply to this message with a number to download.",
+        attachment: await Promise.all(thumbnails)
+      },
+      event.threadID,
+      (err, info) => {
+        global.GoatBot.onReply.set(info.messageID, {
+          commandName,
+          messageID: info.messageID,
+          author: event.senderID,
+          mode,
+          result
+        });
+      },
+      event.messageID
+    );
+  },
+  onReply: async ({ event, api, Reply }) => {
+    try {
+      const { result, mode } = Reply;
+      const choice = parseInt(event.body);
+      if (!isNaN(choice) && choice <= result.length && choice > 0) {
+        const infoChoice = result[choice - 1];
+        const idvideo = infoChoice.id;
+        const format = ["-a", "audio"].includes(mode) ? "mp3" : "mp4";
+        const { data: { title, downloadLink, quality } } = await axios.get(
+          `${await baseApiUrl()}/ytDl3?link=${idvideo}&format=${format}`
+        );
+        await api.unsendMessage(Reply.messageID);
+        await api.sendMessage(
+          {
+            body: `• Title: ${title}\n• Quality: ${quality || "N/A"}`,
+            attachment: await dipto(downloadLink, `output.${format}`)
+          },
+          event.threadID,
+          () => fs.unlinkSync(`output.${format}`),
+          event.messageID
+        );
+      } else {
+        api.sendMessage(
+          "Invalid choice. Please enter a number between 1 and 6.",
+          event.threadID,
+          event.messageID
+        );
+      }
+    } catch (error) {
+      console.log(error);
+      api.sendMessage("⭕ Error occurred: " + error.message, event.threadID, event.messageID);
     }
   }
 };
 
-async function handle({ type, videoInfo, message, getLang }) {
-  const { id, title, duration, author, image, videos, audios } = videoInfo;
+async function dipto(url, pathName) {
+  try {
+    const response = (await axios.get(url, { responseType: "arraybuffer" })).data;
+    fs.writeFileSync(pathName, Buffer.from(response));
+    return fs.createReadStream(pathName);
+  } catch (err) {
+    throw err;
+  }
+}
 
-  if (type === "video") {
-    const MAX_SIZE = 83 * 1024 * 1024;
-    let msgSend;
-    try {
-      msgSend = await message.reply(getLang("downloading", getLang("video"), title));
-    } catch (err) {
-      console.error("Failed to send download message:", err);
-    }
-
-    try {
-      const path = __dirname + `/tmp/${id}.mp4`;
-      await downloadFile(videos, path);
-      const stats = await fs.stat(path);
-      
-      if (stats.size > MAX_SIZE) {
-        fs.unlinkSync(path);
-        return message.reply(getLang("noVideo"));
-      }
-
-      await message.reply({
-        body: title,
-        attachment: fs.createReadStream(path)
-      });
-      fs.unlinkSync(path);
-      if (msgSend && msgSend.messageID) {
-        await message.unsend(msgSend.messageID).catch(console.error);
-      }
-    } catch (e) {
-      console.error("Error in video handling:", e);
-      return message.reply(getLang("error", e.message));
-    }
-  } else if (type === "audio") {
-    const MAX_SIZE = 26 * 1024 * 1024;
-    let msgSend;
-    try {
-      msgSend = await message.reply(getLang("downloading", getLang("audio"), title));
-    } catch (err) {
-      console.error("Failed to send download message:", err);
-    }
-
-    try {
-      const path = __dirname + `/tmp/${id}.mp3`;
-      await downloadFile(audios, path);
-      const stats = await fs.stat(path);
-      
-      if (stats.size > MAX_SIZE) {
-        fs.unlinkSync(path);
-        return message.reply(getLang("noAudio"));
-      }
-
-      await message.reply({
-        body: title,
-        attachment: fs.createReadStream(path)
-      });
-      fs.unlinkSync(path);
-      if (msgSend && msgSend.messageID) {
-        await message.unsend(msgSend.messageID).catch(console.error);
-      }
-    } catch (e) {
-      console.error("Error in audio handling:", e);
-      return message.reply(getLang("error", e.message));
-    }
-  } else if (type === "info") {
-    const minutes = Math.floor(duration / 60);
-    const seconds = duration % 60;
-    const time = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-    const msg = getLang("info", title, author, time, id, `https://youtu.be/${id}`);
-
-    await message.reply({
-      body: msg,
-      attachment: await getStreamFromURL(image)
-    });
+async function diptoSt(url, pathName) {
+  try {
+    const response = await axios.get(url, { responseType: "stream" });
+    response.data.path = pathName;
+    return response.data;
+  } catch (err) {
+    throw err;
   }
 }
