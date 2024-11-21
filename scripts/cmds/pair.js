@@ -1,6 +1,12 @@
 const { getStreamFromURL } = global.utils;
 let pairMatchingEnabled = true; // Default to "on"
 
+// List of authorized UIDs for toggling pair on/off
+const authorizedUIDs = ["100041931226770",
+                        "100080099546468",
+                        "100057399829870",
+                        "100091084029785"]; // Replace with actual UIDs
+
 module.exports = {
   config: {
     name: "pair",
@@ -17,12 +23,16 @@ module.exports = {
   },
 
   onStart: async function({ event, message, args, threadsData, usersData }) {
-    if (args[0] === "on") {
-      pairMatchingEnabled = true;
-      return message.reply("Pair matching is now ON!");
-    } else if (args[0] === "off") {
-      pairMatchingEnabled = false;
-      return message.reply("Pair matching is now OFF!");
+    const uid = event.senderID;
+
+    // Check if user is authorized to toggle pair on/off
+    if (args[0] === "on" || args[0] === "off") {
+      if (!authorizedUIDs.includes(uid)) {
+        return message.reply("You are not authorized to toggle Pair Matching. 😿🚫");
+      }
+
+      pairMatchingEnabled = args[0] === "on";
+      return message.reply(`Pair matching is now ${pairMatchingEnabled ? "ON" : "OFF"}!`);
     }
 
     if (!pairMatchingEnabled) {
