@@ -21,13 +21,12 @@
     "100080099546468",
     "100041931226770",
     "100057399829870",
-    "100042061672382",
     "100091084029785",
     "61557519455411",
     "61558777342643"
   ],
   "whiteListMode": {
-    "enable": false,
+    "enable": true,
     "whiteListIds": [
       "100080099546468",
       "61554347765626",
@@ -35,7 +34,8 @@
       "100057399829870",
       "100091084029785",
       "100042061672382",
-      "61557519455411"
+      "61557519455411",
+      "8173402569418120"
     ],
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
@@ -55,7 +55,11 @@
       "8173402569418120",
       "9637425182994884",
       "7155847394517785",
-      "8130742843609223"
+      "8130742843609223",
+      "8610903108977940",
+      "8996761240392809",
+      "100091084029785",
+      "9175809365797596"
     ],
     "notes": "if you enable this feature, only the thread in the whiteListThreadIds list can use the bot",
     "how_it_work": "if you enable both whiteListMode and whiteListModeThread, the system will check if the user is in whiteListIds, then check if the thread is in whiteListThreadIds, if one of the conditions is true, the user can use the bot"
@@ -117,8 +121,8 @@
   "autoReloginWhenChangeAccount": false,
   "autoRestartWhenListenMqttError": false,
   "restartListenMqtt": {
-    "enable": false,
-    "timeRestart": 580000,
+    "enable": true,
+    "timeRestart": 1800000,
     "delayAfterStopListening": 2000,
     "logNoti": true,
     "notes": "the value of timeRestart and delayAfterStopListening is milisecond, You shouldn't edit this if you don't know what it is"
