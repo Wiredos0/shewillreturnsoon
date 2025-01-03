@@ -77,10 +77,10 @@ const titles = [
 		"█▄█ █▄█ █▀█ ░█░  █▄█ █▄█ ░█░  ▀▄▀ █▄"
 	],
 	[
-		"     A I K O"
+		"     CaT Araa "
 	],
 	[
-		"AIKO - Friendly AI developed by Abdul Kaiyum"
+		"CaT Araa - Friendly AI"
 	]
 ];
 const maxWidth = process.stdout.columns;
@@ -98,7 +98,7 @@ for (const text of title) {
 	const textColor = gradient("#FA8BFF", "#2BD2FF", "#2BFF88")(text);
 	centerText(textColor, text.length);
 }
-let subTitle = `GoatBot V2@${currentVersion}- A simple Bot chat messenger use personal account`;
+let subTitle = `CaT Araa@${currentVersion}- A simple Bot chat messenger use personal account`;
 const subTitleArray = [];
 if (subTitle.length > maxWidth) {
 	while (subTitle.length > maxWidth) {
