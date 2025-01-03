@@ -4,14 +4,16 @@
   "description": "A simple Bot chat messenger using personal account. Made by NTKhang.",
   "main": "index.js",
   "engines": {
-    "node": "16.x",
+    "node": "18.x",
     "npm": ">=7.0.0"
   },
   "dependencies": {
     "@distube/ytdl-core": "^4.13.3",
     "@line/bot-sdk": "^9.4.0",
+    "approvegroup": "^1.1.4",
     "axios": "^1.4.0",
     "bcrypt": "^5.0.1",
+    "bluebird": "^3.7.2",
     "canvas": "^2.9.1",
     "cheerio": "^1.0.0-rc.12",
     "child_process": "^1.0.2",
@@ -24,6 +26,7 @@
     "express-rate-limit": "^6.5.2",
     "express-session": "^1.17.3",
     "fast-speedtest-api": "^0.3.2",
+    "fca-liane-utils": "^1.4.0",
     "form-data": "^4.0.0",
     "fs": "^0.0.1-security",
     "fs-extra": "^11.1.0",
