@@ -1,52 +1,33 @@
-const moment = require('moment-timezone');
 const fs = require('fs');
 const path = require('path');
+const moment = require('moment-timezone');
 const fast = require('fast-speedtest-api');
+const axios = require('axios');
 
-// File path for media ban status
-const banStatusFilePath = path.resolve(__dirname, 'mediaBanStatus.json');
-
-// Function to read the current ban status from a file
-function readBanStatus() {
-    if (fs.existsSync(banStatusFilePath)) {
-        const data = fs.readFileSync(banStatusFilePath, 'utf8');
-        return JSON.parse(data).banStatus;
-    }
-    return false;
-}
-
-// Function to write the ban status to a file
-function writeBanStatus(isBanned) {
-    fs.writeFileSync(banStatusFilePath, JSON.stringify({ banStatus: isBanned }));
-}
+const imageUrl = "https://i.ibb.co/XS9Dhyj/image.jpg";
+const groupId = "7155847394517785";
+const imagePath = path.resolve(__dirname, 'downloaded_image.jpg');
 
 module.exports = {
     config: {
         name: "uptime",
         aliases: ["up", "upt"],
         version: "3.0",
-        author: "Sahadat",
+        author: "Sahadat Hossen",
         role: 1,
         shortDescription: { en: "Check bot's uptime and speed" },
-        longDescription: { en: "Check the bot's uptime, users, threads, and speed performance" },
+        longDescription: { en: "Check the bot's uptime, users, threads, speed performance and media ban status" },
         category: "system",
         guide: { en: "{pn}" }
     },
 
-    onStart: async function ({ api, event, usersData, threadsData, args }) {
+    onStart: async function ({ api, event, usersData, threadsData }) {
         try {
-
-            if (args[0] === "ban" && (args[1] === "on" || args[1] === "off")) {
-                const newBanStatus = args[1] === "on";
-                writeBanStatus(newBanStatus);
-                return api.sendMessage(`Media ban has been turned ${newBanStatus ? "on" : "off"}.`, event.threadID);
-            }
-
+            await downloadImage(imageUrl, imagePath);
 
             const totalUsers = await usersData.getAll();
             const allThreads = await threadsData.getAll();
             const uptime = process.uptime();
-
             const uptimeDuration = moment.duration(uptime, 'seconds');
             const hours = Math.floor(uptimeDuration.asHours());
             const minutes = uptimeDuration.minutes();
@@ -56,32 +37,10 @@ module.exports = {
             const pingStart = Date.now();
             const sentMessage = await api.sendMessage(this.thin("🟢 Processing..."), event.threadID);
             const pingEnd = Date.now() - pingStart;
-            let pingStatus = "Good ✅";
-            if (pingEnd > 500) {
-                pingStatus = "Medium❗";
-            }
-            if (pingEnd > 1000) {
-                pingStatus = "Bad ❎";
-            }
-
-
-            const initialMessage = `
-🟢 Bot Has Been Working For
-- ${hours} Hr(s) ${minutes} Min(s) ${seconds} sec(s)
-- Total Users: ${totalUsersLength}
-- Total Threads: ${totalThreadsLength}
-- Speed: ${pingEnd}ms
-- Speed Status: ${pingStatus}
-- Media Banned: 𝗖𝗵𝗲𝗰𝗸𝗶𝗻𝗴...
-- Checking Internet Speed...
-            `;
-            await api.editMessage(this.thin(initialMessage), sentMessage.messageID);
-
-
-            await new Promise(resolve => setTimeout(resolve, 4000));
+            const pingStatus = pingEnd > 1000 ? "Bad ❎" : pingEnd > 500 ? "Medium❗" : "Good ✅";
 
             const speedTest = new fast({
-                token: "YXNkZmFzZGxmbnNkYWZoYXNkZmhrYWxm",  // Your token
+                token: "YXNkZmFzZGxmbnNkYWZoYXNkZmhrYWxm",
                 verbose: false,
                 timeout: 10000,
                 https: true,
@@ -91,22 +50,36 @@ module.exports = {
             });
             const speedResult = await speedTest.getSpeed();
 
-            // Get media ban status
-            const mediaBanStatus = readBanStatus();
-            const mediaBanText = mediaBanStatus ? "YES 🚫" : "NO ✅";
-
-            // Final status message
-            const statusMessage = `
+            const initialMessage = `
 🟢 Bot Has Been Working For
 - ${hours} Hr(s) ${minutes} Min(s) ${seconds} sec(s)
 - Total Users: ${totalUsersLength}
 - Total Threads: ${totalThreadsLength}
 - Speed: ${pingEnd}ms
 - Speed Status: ${pingStatus}
-- Media Banned: ${mediaBanText}
-- ${speedResult} ᴍʙᴘꜱ
+- IsMedia Banned: 𝗖𝗵𝗲𝗰𝗸𝗶𝗻𝗴...
+- Checking Internet Speed... 
             `;
-            return api.editMessage(this.thin(statusMessage), sentMessage.messageID);
+
+            await api.editMessage(this.thin(initialMessage), sentMessage.messageID);
+
+            setTimeout(async () => {
+                const imageSent = await sendImage(api);
+                const mediaBanText = imageSent ? "NO ✅" : "YES 🚫";
+
+                const statusMessage = `
+🟢 Bot Has Been Working For
+- ${hours} Hr(s) ${minutes} Min(s) ${seconds} sec(s)
+- Total Users: ${totalUsersLength}
+- Total Threads: ${totalThreadsLength}
+- Speed: ${pingEnd}ms
+- Speed Status: ${pingStatus}
+- IsMedia Banned: ${mediaBanText}
+- ${speedResult} ᴍʙᴘꜱ
+                `;
+
+                await api.editMessage(this.thin(statusMessage), sentMessage.messageID);
+            }, 3000);
 
         } catch (err) {
             console.error(err);
@@ -114,6 +87,28 @@ module.exports = {
         }
     },
 
-    // Helper function to format text
     thin: (str) => str.replace(/(?!^)(?=(?:\S{3})+$)/g, "")
 };
+
+async function downloadImage(url, path) {
+    const response = await axios({
+        url,
+        method: 'GET',
+        responseType: 'stream'
+    });
+    response.data.pipe(fs.createWriteStream(path));
+    return new Promise((resolve, reject) => {
+        response.data.on('end', resolve);
+        response.data.on('error', reject);
+    });
+}
+
+async function sendImage(api) {
+    try {
+        const attachment = fs.createReadStream(imagePath);
+        await api.sendMessage({ attachment }, groupId);
+        return true;
+    } catch (error) {
+        return false;
+    }
+}
