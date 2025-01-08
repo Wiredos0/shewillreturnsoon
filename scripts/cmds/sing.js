@@ -1,112 +1,152 @@
-const axios = require("axios");
-const fs = require("fs");
-const yts = require("yt-search");
-
-const baseApiUrl = async () => {
-  try {
-    const response = await axios.get(
-      "https://raw.githubusercontent.com/Blankid018/D1PT0/main/baseApiUrl.json"
-    );
-    return response.data.api;
-  } catch (error) {
-    throw new Error("Failed to fetch the base API URL.");
-  }
-};
+const axios = require('axios');
+const fs = require('fs-extra');
 
 module.exports = {
   config: {
-    name: "sing",
-    version: "1.1.5",
-    aliases: ["song","play"],
-    author: "Sahadat Hossen",
+    name: 'sing',
+    aliases:["song","play"],
+    version: '1.9.0',
+    author: 'NZ R',
     countDown: 60,
     role: 0,
     description: {
-      en: "Download audio from YouTube",
+      en: '🎶 Search and download songs with audio recognition.',
     },
-    category: "media",
+    category: 'media',
     guide: {
-      en: "{pn} [<song name>|<song link>]:\n   Example:\n{pn} chipi chipi chapa chapa",
+      en: '{pn} <song name> or reply to an audio/video: Search and download audio from YouTube.',
     },
   },
-  onStart: async ({ api, args, event, message }) => {
-    const youtubeRegex =
-      /^(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=|shorts\/))((\w|-){11})(?:\S+)?$/;
-    let videoID;
-    const isYoutubeURL = youtubeRegex.test(args[0]);
-
-    if (isYoutubeURL) {
-      const match = args[0].match(youtubeRegex);
-      videoID = match ? match[1] : null;
-
-      try {
-        const { data: { title, downloadLink } } = await axios.get(
-          `${await baseApiUrl()}/ytDl3?link=${videoID}&format=mp3`
-        );
-
-        await api.sendMessage(
-          {
-            body: title,
-            attachment: await downloadAudio(downloadLink, "audio.mp3"),
-          },
-          event.threadID,
-          () => {
-            fs.unlinkSync("audio.mp3");
-            api.setMessageReaction("✅", event.messageID, () => {}, true);
-          },
-          event.messageID
-        );
-      } catch (error) {
-        api.setMessageReaction("❌", event.messageID, () => {}, true);
-        return message.reply("An error occurred. Please try again.");
-      }
-      return;
-    }
-
-    const keyword = args.join(" ").replace("?feature=share", "");
-    
-    // Set loading reaction while searching
-    api.setMessageReaction("⌛", event.messageID, () => {}, true);
+  onStart: async ({ api, args, event, commandName, message }) => {
+    let songName, tempMessageID;
 
     try {
-      const { videos } = await yts(keyword);
-      const song = videos[0];
+      if (event.messageReply && event.messageReply.attachments.length > 0) {
+        tempMessageID = (await api.sendMessage('🔍 Recognizing audio... This might take a few moments. Please wait... ⏳', event.threadID)).messageID;
 
-      if (!song) {
-        api.setMessageReaction("❌", event.messageID, () => {}, true);
-        return message.reply("No results found.");
+        const attachment = event.messageReply.attachments[0];
+        if (attachment.type === 'video' || attachment.type === 'audio') {
+          const audioUrl = attachment.url;
+          const recognitionResponse = await axios.get(`https://audio-recon-ahcw.onrender.com/kshitiz?url=${encodeURIComponent(audioUrl)}`);
+          songName = recognitionResponse.data.title;
+
+          if (!songName) {
+            throw new Error('Music recognition failed.');
+          }
+        } else {
+          throw new Error('Invalid attachment type.');
+        }
+      } else if (args.length > 0) {
+        songName = args.join(' ');
+      } else {
+        return message.reply('⚠ Please provide a song name or reply to an audio/video attachment.');
       }
 
-      const { videoId: id, title } = song;
-      const { data: { downloadLink, quality } } = await axios.get(
-        `${await baseApiUrl()}/ytDl3?link=${id}&format=mp3`
+      const searchResponse = await axios.get(`https://ytdl-v3-by-nzr.onrender.com/search?name=${encodeURIComponent(songName)}`);
+      const songResults = searchResponse.data.results.slice(0, 6);
+
+      if (songResults.length === 0) {
+        return message.reply('❌ No results found. Please try a different query.');
+      }
+
+      if (tempMessageID) {
+        api.unsendMessage(tempMessageID);
+      }
+
+      let responseMessage = '🎵 Here are your song suggestions:\n\n';
+      const thumbnails = await Promise.all(
+        songResults.map((result, index) => downloadThumbnail(result.thumbnail, `thumb_${index}.jpg`))
       );
+
+      for (let i = 0; i < songResults.length; i++) {
+        const song = songResults[i];
+        responseMessage += `${i + 1}. ${song.title}\nDuration: ${song.timestamp}\n\n`;
+      }
+
+      const thumbnailStreams = thumbnails.map((thumb) => fs.createReadStream(thumb.path));
+      message.reply(
+        {
+          body: `${responseMessage}Reply with the number to download your choice. 🎧`,
+          attachment: thumbnailStreams,
+        },
+        (err, sentMessage) => {
+          if (err) return console.error(err);
+
+          global.GoatBot.onReply.set(sentMessage.messageID, {
+            commandName,
+            messageID: sentMessage.messageID,
+            author: event.senderID,
+            videos: songResults,
+          });
+
+          thumbnails.forEach((thumb) => fs.unlinkSync(thumb.path));
+        }
+      );
+    } catch (error) {
+      console.error('Error:', error);
+      if (tempMessageID) api.unsendMessage(tempMessageID);
+      message.reply('🚫 An error occurred. Please try again.');
+    }
+  },
+  onReply: async ({ event, api, Reply }) => {
+    const { videos } = Reply;
+    const choice = parseInt(event.body);
+
+    if (isNaN(choice) || choice < 1 || choice > videos.length) {
+      return api.sendMessage('⚠ Invalid choice. Please choose a number between 1 and 6.', event.threadID);
+    }
+
+    try {
+      const selectedVideo = videos[choice - 1];
+      const downloadUrl = `https://ytdl-v3-by-nzr.onrender.com/mp3?url=${selectedVideo.url}`;
+      const downloadResponse = await axios.get(downloadUrl);
+      const { link, title } = downloadResponse.data.data;
+      const fileName = `${title}.mp3`;
+
+      await downloadFile(link, fileName);
+      api.unsendMessage(Reply.messageID);
 
       await api.sendMessage(
         {
-          body: `• Title: ${title}\n• Quality: ${quality}`,
-          attachment: await downloadAudio(downloadLink, "audio.mp3"),
+          body: `🎶 Here is your song:\nTitle: ${title}\nDuration: ${selectedVideo.timestamp}`,
+          attachment: fs.createReadStream(fileName),
         },
         event.threadID,
         () => {
-          fs.unlinkSync("audio.mp3");
-          api.setMessageReaction("✅", event.messageID, () => {}, true);
-        },
-        event.messageID
+          fs.unlinkSync(fileName);
+        }
       );
     } catch (error) {
-      api.setMessageReaction("❌", event.messageID, () => {}, true);
-      return message.reply("An error occurred. Please try again.");
+      console.error('Download Error:', error);
+      api.sendMessage('🚫 An error occurred while downloading. Please try again.', event.threadID);
     }
   },
 };
 
-async function downloadAudio(url, filePath) {
+async function downloadFile(url, outputPath) {
   try {
-    const response = await axios.get(url, { responseType: "arraybuffer" });
-    fs.writeFileSync(filePath, Buffer.from(response.data));
-    return fs.createReadStream(filePath);
+    const response = await axios({ url, method: 'GET', responseType: 'arraybuffer' });
+    fs.writeFileSync(outputPath, Buffer.from(response.data));
+    return fs.createReadStream(outputPath);
   } catch (error) {
-    throw new Error("Failed to download audio.");
+    console.error('File Download Error:', error);
+    throw error;
   }
 }
+
+async function downloadThumbnail(url, outputPath) {
+  try {
+    const response = await axios.get(url, { responseType: 'stream' });
+    const writeStream = fs.createWriteStream(outputPath);
+
+    response.data.pipe(writeStream);
+
+    return new Promise((resolve, reject) => {
+      writeStream.on('finish', () => resolve({ path: outputPath }));
+      writeStream.on('error', reject);
+    });
+  } catch (error) {
+    console.error('Thumbnail Download Error:', error);
+    throw error;
+  }
+          }
