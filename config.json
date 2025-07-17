@@ -23,10 +23,14 @@
     "100057399829870",
     "100091084029785",
     "61557519455411",
-    "61558777342643"
+    "100051925306354",
+    "61575979031698",
+    "61575864587519",
+    "61577493782069",
+    "61578068211931"
   ],
   "whiteListMode": {
-    "enable": true,
+    "enable": false,
     "whiteListIds": [
       "100080099546468",
       "61554347765626",
@@ -40,7 +44,7 @@
     "notes": "if you enable this feature, only the ids in the whiteListIds section can use the bot"
   },
   "whiteListModeThread": {
-    "enable": true,
+    "enable": false,
     "whiteListThreadIds": [
       "7388254684526242",
       "4631206170332575",
@@ -49,7 +53,6 @@
       "24573771252237853",
       "6635864189876172",
       "6159021194163975",
-      "7670534426398296",
       "6384036358275831",
       "7324752147544257",
       "8173402569418120",
@@ -59,7 +62,10 @@
       "8610903108977940",
       "8996761240392809",
       "100091084029785",
-      "9175809365797596"
+      "9175809365797596",
+      "9594392423906599",
+      "23894881320112859",
+      "9528831027242348"
     ],
     "notes": "if you enable this feature, only the thread in the whiteListThreadIds list can use the bot",
     "how_it_work": "if you enable both whiteListMode and whiteListModeThread, the system will check if the user is in whiteListIds, then check if the thread is in whiteListThreadIds, if one of the conditions is true, the user can use the bot"
@@ -76,10 +82,10 @@
   "timeZone": "Asia/Dhaka",
   "credentials": {
     "gmailAccount": {
-      "email": "esteliaelora57@gmail.com",
-      "clientId": "134483285553-6hkt4lihso45m3ehl6fq96lprj1k7kcc.apps.googleusercontent.com",
-      "clientSecret": "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",
-      "refreshToken": "1//04edHJ82qjM8cCgYIARAAGAQSNwF-L9Irz41oCPFQhvUADkXLtmK_xL4XTW9TaeOzhIC7nF5_9lBphQ3GHnHYnprWOn_DinXrzkw",
+      "email": "akoh22812@gmail.com",
+      "clientId": "133535667667-d27c0qr9jlrks4p3min6r49o1h23bndp.apps.googleusercontent.com",
+      "clientSecret": "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",
+      "refreshToken": "1//04XeOdpVM6Dw9CgYIARAAGAQSNwF-L9IryU29lefs-eOglnby6_Id8C8vo_mcqMuRF4JDkhLyZN9mdH_iPYKuM5q0ftbqByhMVkI",
       "apiKey": ""
     },
     "gRecaptcha": {
